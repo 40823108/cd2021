@@ -103,7 +103,6 @@ Author: yen
 2020 Fall 計算機程式的教學主要介紹 Python 與 Flutter 在機械設計流程中的應用.
 
 &lt;!-- PELICAN_END_SUMMARY --&gt;
-
 @others
 </t>
 <t tx="leo.20210227231903.1">Python
