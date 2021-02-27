@@ -56,7 +56,7 @@
 <v t="leo.20170710022041.1"><vh>@path markdown</vh>
 <v t="leo.20180115115910.1"><vh>2020</vh>
 <v t="leo.20180423103639.1"><vh>2020 Fall CP 課程</vh>
-<v t="leo.20180423103656.1"><vh>@clean 20210813</vh>
+<v t="leo.20180423103656.1"><vh>@clean 20210813.md</vh>
 <v t="leo.20210227231903.1"><vh>newHeadline</vh></v>
 </v>
 </v>
