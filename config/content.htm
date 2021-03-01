@@ -49,7 +49,8 @@
 <p>動態內容編輯完成後, 以 generate_pages 轉為靜態內容, 以 git add commit 及 push 將內容推到遠端.</p>
 <p>4. 之後若要以 git clone 取下包含 submodule 的所有內容, 執行:</p>
 <p>git clone --recurse-submodules<span> </span><a href="https://github.com/mdecourse/newcms.git">https://github.com/mdecourse/newcms.git</a></p>
-<p><em></em><strong><br/></strong></p><h2>Cmsimde create</h2>
+<p><em></em><strong><br/></strong></p>
+<h2>Cmsimde create</h2>
 <p><strong>Step1:</strong></p>
 <p><span>  <em>Go to</em></span><em><strong> </strong><a href="https://github.com/mdecourse/cd2021/discussions/7"><strong>2021 可攜程式系統</strong><br/></a>First download the <strong><a href="https://drive.google.com/file/d/1R6vAAWdNDigmyvFFQTKyM-XNKOWeCFJU/view?usp=sharing" rel="nofollow">下載 kmol2021_spring_v2.7z</a></strong> compressed file, and extract the file to the    flash drive.</em></p>
 <p><strong>Step2:</strong></p>
@@ -106,8 +107,75 @@
 <p><strong>Step18:</strong></p>
 <p><em>  Successfully established a website.</em></p>
 <p><em><img alt="" height="1080" src="/images/cmsimde-18.JPG" width="1920"/></em></p>
-<p><em></em></p>
-<h2>SSH key produce</h2>
+<p><em> </em></p>
+<h2>Python program</h2>
+<p><strong>Python program:</strong></p>
+<pre class="brush:dart;auto-links:false;toolbar:false" contenteditable="false">import csv
+   
+# read student list
+filename = 'D:/1a/1alist.txt'
+with open(filename, encoding="utf-8") as f:
+    content = f.readlines()
+    student = [x.strip() for x in content]
+#print(content)
+#print(student)
+   
+# Timestamp, email, ????, url, score, desp, memo
+# 0, 1, 2, 3, 4, 5, 6
+#total = 0
+  
+all = {}
+with open('D:/1a/1a.csv', encoding="utf-8") as csv_file:
+    csv_reader = csv.reader(csv_file, delimiter=',')
+       
+    line_count = 0
+    for row in csv_reader:
+        if line_count == 0:
+            #print(f'Column names are {", ".join(row)}')
+            line_count += 1
+        else:
+            student_num = row[1].split("@")[0]
+            #print(student_num)
+            student_score = row[4]
+            #print(student_score)
+            try:
+                all.update({student_num: student_score})
+            except:
+                all.update({student_num: "error"})
+            #print(f'\t{row[0]} works in the {row[1]} department, and was born in {row[2]}.')
+            #print(f'\t{row[4]}')
+            #total += int(row[4])
+            line_count += 1
+#print(all)
+#print(student)
+  
+for i in student:
+       
+    #if i in all:
+        #pass
+    #else:
+        #print(str(i))
+       
+    try:
+        print(i + "\t" + all[i])
+    except:
+        print(i + "\t60")
+  
+   
+    #print(f'Processed {line_count} lines.')
+    #print("??=" + str(total/line_count))</pre>
+<p><strong>Flask program:</strong></p>
+<pre class="brush:dart;auto-links:false;toolbar:false" contenteditable="false">from flask import Flask
+   
+app = Flask(__name__)
+   
+@app.route('/') 
+def hello_world():
+    return 'Hello, From Flask!'
+   
+if __name__== '__main__': 
+    app.run()
+</pre><h2>SSH key produce</h2>
 <p>Open:</p>
 <p>  Y:/PuTTY--&gt;puttygen.exe</p>
 <p><img alt="" height="701" src="/images/ssh-1.PNG" width="1272"/></p>
@@ -119,7 +187,8 @@
 <p><em><span>  The full content is as follows:</span></em></p>
 <p><em><span><img alt="" height="734" src="/images/ssh-4.PNG" width="564"/></span></em></p>
 <p><em><span>  Go to storage--&gt;seeting--&gt;SSH and GPG keys, click New SSH key, paste the copied content and save it for use.</span></em></p>
-<p><em><span><img alt="" height="1440" src="/images/ssh-5.PNG" width="2560"/></span></em></p><h2>SSH putty settings</h2>
+<p><em><span><img alt="" height="1440" src="/images/ssh-5.PNG" width="2560"/></span></em></p>
+<h2>SSH putty settings</h2>
 <p><em>  SSH Putty settings:</em></p>
 <p><em><img alt="" height="443" src="/images/ssh-6.PNG" width="452"/></em></p>
 <p><em>  Please select the .ppk file for the line drawing.</em></p>
@@ -130,4 +199,5 @@
 <p><em>  Modified to: <strong>url=git@github.com:40823108/cd2021.git</strong></em></p>
 <p><em><strong><img alt="" height="734" src="/images/ssh-9.PNG" width="565"/></strong></em></p>
 <p><em>  The following is a record of successful use of SSH without password push.</em></p>
-<p><em><img alt="" height="515" src="/images/ssh-10.PNG" width="984"/></em></p><h1>Midterm</h1>
+<p><em><img alt="" height="515" src="/images/ssh-10.PNG" width="984"/></em></p>
+<h1>Midterm</h1>

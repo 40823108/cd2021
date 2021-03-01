@@ -133,20 +133,74 @@ img.add_border {
           </div>
           
         </header>
-    <div id="tipue_search_content">Python program << <a href='Python program.html'>Previous</a> <a href='SSH putty settings.html'>Next</a> >> SSH putty settings<br /><h1>SSH key produce</h1>
-<p>Open:</p>
-<p>  Y:/PuTTY--&gt;puttygen.exe</p>
-<p><img alt="" height="701" src="./../images/ssh-1.PNG" width="1272"/></p>
-<p><em>  Use puttygen to import the private key (id_rsa) and convert it into a format (.ppk) file that putty can understand.</em></p>
-<p><em>  After saving the (.ppk) file.</em></p>
-<p><em><img alt="" height="471" src="./../images/ssh-2.PNG" width="481"/></em></p>
-<p><em>  Use scite to open the public key (id_rsa.pub), go to the toolbar and find Options--&gt;Wrap to see the complete file content.</em></p>
-<p><em><img alt="" height="929" src="./../images/ssh-3.PNG" width="610"/></em></p>
-<p><em><span>  The full content is as follows:</span></em></p>
-<p><em><span><img alt="" height="734" src="./../images/ssh-4.PNG" width="564"/></span></em></p>
-<p><em><span>  Go to storage--&gt;seeting--&gt;SSH and GPG keys, click New SSH key, paste the copied content and save it for use.</span></em></p>
-<p><em><span><img alt="" height="1440" src="./../images/ssh-5.PNG" width="2560"/></span></em></p>
-<br />Python program << <a href='Python program.html'>Previous</a> <a href='SSH putty settings.html'>Next</a> >> SSH putty settings</div>
+    <div id="tipue_search_content">Cmsimde create << <a href='Cmsimde create.html'>Previous</a> <a href='SSH key produce.html'>Next</a> >> SSH key produce<br /><h1>Python program</h1>
+<p><strong>Python program:</strong></p>
+<pre class="brush:dart;auto-links:false;toolbar:false" contenteditable="false">import csv
+   
+# read student list
+filename = 'D:/1a/1alist.txt'
+with open(filename, encoding="utf-8") as f:
+    content = f.readlines()
+    student = [x.strip() for x in content]
+#print(content)
+#print(student)
+   
+# Timestamp, email, ????, url, score, desp, memo
+# 0, 1, 2, 3, 4, 5, 6
+#total = 0
+  
+all = {}
+with open('D:/1a/1a.csv', encoding="utf-8") as csv_file:
+    csv_reader = csv.reader(csv_file, delimiter=',')
+       
+    line_count = 0
+    for row in csv_reader:
+        if line_count == 0:
+            #print(f'Column names are {", ".join(row)}')
+            line_count += 1
+        else:
+            student_num = row[1].split("@")[0]
+            #print(student_num)
+            student_score = row[4]
+            #print(student_score)
+            try:
+                all.update({student_num: student_score})
+            except:
+                all.update({student_num: "error"})
+            #print(f'\t{row[0]} works in the {row[1]} department, and was born in {row[2]}.')
+            #print(f'\t{row[4]}')
+            #total += int(row[4])
+            line_count += 1
+#print(all)
+#print(student)
+  
+for i in student:
+       
+    #if i in all:
+        #pass
+    #else:
+        #print(str(i))
+       
+    try:
+        print(i + "\t" + all[i])
+    except:
+        print(i + "\t60")
+  
+   
+    #print(f'Processed {line_count} lines.')
+    #print("??=" + str(total/line_count))</pre>
+<p><strong>Flask program:</strong></p>
+<pre class="brush:dart;auto-links:false;toolbar:false" contenteditable="false">from flask import Flask
+   
+app = Flask(__name__)
+   
+@app.route('/') 
+def hello_world():
+    return 'Hello, From Flask!'
+   
+if __name__== '__main__': 
+    app.run()
+</pre><br />Cmsimde create << <a href='Cmsimde create.html'>Previous</a> <a href='SSH key produce.html'>Next</a> >> SSH key produce</div>
         
     <!-- footer -->
       <div class="container">
