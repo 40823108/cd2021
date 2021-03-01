@@ -92,12 +92,12 @@ g.es("admin pelican Github 執行完畢")
 <t tx="leo.20180423103639.1"></t>
 <t tx="leo.20180423103656.1">@language md
 ---
-Title: 2020 Fall CP 課程
-Date: 2020-08-13 11:00
+Title: cd2021 課程
+Date: 2021-02-25 11:00
 Category: Misc
-Tags: 2020FallCP
-Slug: 2020-Fall-Intro-to-computer-programming-1
-Author: yen
+Tags: cd2021
+Slug: 40823108 cd2021
+Author: 40823108
 ---
 
 2020 Fall 計算機程式的教學主要介紹 Python 與 Flutter 在機械設計流程中的應用.
@@ -121,7 +121,7 @@ Flutter
 
 Flutter 用來開發跨 Apple 與 Android 手機與平板上的 Apps
 
-@other</t>
+@others</t>
 <t tx="yen.20170108171605.1"></t>
 <t tx="yen.20170108171605.2">QTreeWidget {
     /* These apply to the selected item, but not to editing items.*/
