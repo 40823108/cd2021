@@ -33,8 +33,19 @@
 <v t="leo.20200818170909.1"><vh>slide 3-1</vh></v>
 <v t="leo.20200818170953.1"><vh>slide 3-2</vh></v>
 <v t="leo.20200818171010.1"><vh>slide 3-3</vh></v>
+<v t="leo.20210313165904.1"><vh>slide3-4</vh></v>
+<v t="leo.20210313171017.1"><vh>slide3-5</vh></v>
+<v t="leo.20210313171324.1"><vh>slide3-6</vh></v>
 </v>
-<v t="leo.20200818170725.1"><vh>slide 4</vh></v>
+<v t="leo.20200818170725.1"><vh>slide 4</vh>
+<v t="leo.20210313171838.1"><vh>slide4-0</vh></v>
+<v t="leo.20210313171930.1"><vh>slide4-1</vh></v>
+<v t="leo.20210313172512.1"><vh>slide4-2</vh></v>
+<v t="leo.20210313172801.1"><vh>slide4-3</vh></v>
+<v t="leo.20210313173217.1"><vh>slide4-4</vh></v>
+<v t="leo.20210313173710.1"><vh>slide4-5</vh></v>
+<v t="leo.20210313173803.1"><vh>slide4-6</vh></v>
+</v>
 <v t="leo.20200818171138.1"><vh>slide 5 </vh></v>
 <v t="leo.20200818171215.1"><vh>slide 6</vh></v>
 <v t="leo.20200818171244.1"><vh>slide 7 </vh></v>
@@ -236,11 +247,9 @@ vertical: body pane on the botton</t>
 &lt;/section&gt;
 
 </t>
-<t tx="leo.20200818170725.1">&lt;section&gt;
-    &lt;h2&gt;Slides&lt;/h2&gt;
-    &lt;p&gt;
-        Not a coder? Not a problem. There's a fully-featured visual editor for authoring these, try it out at &lt;a href="https://slides.com" target="_blank"&gt;https://slides.com&lt;/a&gt;.
-    &lt;/p&gt;
+<t tx="leo.20200818170725.1">&lt;!-- Example of nested vertical slides --&gt;
+&lt;section&gt;
+    @others
 &lt;/section&gt;
 
 </t>
@@ -685,6 +694,52 @@ console.log( '"customevent" has fired' );
 &lt;/section&gt;</t>
 <t tx="leo.20210313164304.1">&lt;section&gt;
     &lt;h2&gt;W3進度&lt;/h2&gt;
+&lt;/section&gt;</t>
+<t tx="leo.20210313165904.1">&lt;section&gt;
+    &lt;h2&gt;簡化零件&lt;/h2&gt;
+     &lt;small&gt;&lt;p&gt;為了能夠方便模擬，我們將部分零件做簡化，讓模擬時不會因為過多的零件導致模擬失敗&lt;/p&gt;&lt;/small&gt;
+     &lt;p&gt;&lt;img src="https://github.com/40823108/cd2021/blob/main/images/EV3-9.JPG?raw=true" alt="" width="500" height="250"&gt;&lt;/p&gt;
+&lt;/section&gt;</t>
+<t tx="leo.20210313171017.1">&lt;section&gt;
+    &lt;h2&gt;模擬1&lt;/h2&gt;
+     &lt;small&gt;&lt;p&gt;第一次模擬因為零件過多，需要調整許多參數，導致在模擬過程中遇到許多問題，也導致模擬失敗&lt;/p&gt;&lt;/small&gt;
+     &lt;p&gt;&lt;img src="https://github.com/40823108/cd2021/blob/main/images/EV3-10.JPG?raw=true" alt="" width="500" height="250"&gt;&lt;/p&gt;
+&lt;/section&gt;</t>
+<t tx="leo.20210313171324.1">&lt;section&gt;
+    &lt;h2&gt;模擬2&lt;/h2&gt;
+     &lt;small&gt;&lt;p&gt;在經過零件簡化後，模擬上的問題也減少了，需要設定的參數也相對變少，最後成功讓小車可以移動&lt;/p&gt;&lt;/small&gt;
+     &lt;p&gt;&lt;img src="https://github.com/40823108/cd2021/blob/main/images/EV3-11.JPG?raw=true" alt="" width="500" height="250"&gt;&lt;/p&gt;
+&lt;/section&gt;</t>
+<t tx="leo.20210313171838.1">&lt;section&gt;
+    &lt;h2&gt;W4進度&lt;/h2&gt;
+&lt;/section&gt;</t>
+<t tx="leo.20210313171930.1">&lt;section&gt;
+    &lt;h2&gt;2D 工程圖&lt;/h2&gt;
+     &lt;small&gt;&lt;p&gt;主機工程圖&lt;/p&gt;&lt;/small&gt;
+     &lt;p&gt;&lt;img src="https://github.com/40823108/cd2021/blob/main/images/EV3-8.JPG?raw=true" alt="" width="500" height="350"&gt;&lt;/p&gt;
+&lt;/section&gt;</t>
+<t tx="leo.20210313172512.1">&lt;section&gt;
+    &lt;h2&gt;3D 爆炸圖&lt;/h2&gt;
+     &lt;small&gt;&lt;p&gt;爆炸圖包含BOM&lt;/p&gt;&lt;/small&gt;
+     &lt;p&gt;&lt;img src="https://github.com/40823108/cd2021/blob/main/images/EV3-7.JPG?raw=true" alt="" width="500" height="350"&gt;&lt;/p&gt;
+&lt;/section&gt;</t>
+<t tx="leo.20210313172801.1">&lt;section&gt;
+    &lt;h2&gt;3D 模型&lt;/h2&gt;
+     &lt;small&gt;&lt;p&gt;完成模型&lt;/p&gt;&lt;/small&gt;
+     &lt;p&gt;&lt;img src="https://github.com/40823108/cd2021/blob/main/images/EV3-5.jpg?raw=true" alt="" width="500" height="250"&gt;&lt;/p&gt;
+&lt;/section&gt;</t>
+<t tx="leo.20210313173217.1">&lt;section&gt;
+    &lt;h2&gt;模擬1&lt;/h2&gt;
+     &lt;small&gt;&lt;p&gt;因零件過多導致模擬失敗&lt;/p&gt;&lt;/small&gt;
+     &lt;p&gt;&lt;iframe width="560" height="315" src="https://www.youtube.com/embed/CO1Vg2Ma95k" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen&gt;&lt;/iframe&gt;&lt;/p&gt;
+&lt;/section&gt;</t>
+<t tx="leo.20210313173710.1">&lt;section&gt;
+    &lt;h2&gt;模擬1&lt;/h2&gt;
+     &lt;small&gt;&lt;p&gt;因零件過多導致模擬失敗&lt;/p&gt;&lt;/small&gt;
+     &lt;p&gt;&lt;iframe width="560" height="315" src="https://www.youtube.com/embed/ASH91DmuYBk" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen&gt;&lt;/iframe&gt;&lt;/p&gt;
+&lt;/section&gt;</t>
+<t tx="leo.20210313173803.1">&lt;section&gt;
+    &lt;h2&gt;W4設計分析規劃簡報 (END)&lt;/h2&gt;
 &lt;/section&gt;</t>
 </tnodes>
 </leo_file>
