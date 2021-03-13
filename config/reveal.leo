@@ -24,6 +24,8 @@
 <v t="leo.20210313014732.1"><vh>slide2-2</vh></v>
 <v t="leo.20210313153436.1"><vh>slide2-3</vh></v>
 <v t="leo.20210313155246.1"><vh>slide2-4</vh></v>
+<v t="leo.20210313161232.1"><vh>slide2-5</vh></v>
+<v t="leo.20210313161447.1"><vh>slide2-6</vh></v>
 </v>
 <v t="leo.20200818170636.1"><vh>slide3</vh>
 <v t="leo.20200818170909.1"><vh>slide 3-1</vh></v>
@@ -223,12 +225,14 @@ vertical: body pane on the botton</t>
 <t tx="leo.20200818170535.1">&lt;!-- Example of nested vertical slides --&gt;
 &lt;section&gt;
     &lt;h2&gt;W2進度&lt;/h2&gt;
+    @others
 &lt;/section&gt;
 
 </t>
 <t tx="leo.20200818170636.1">&lt;!-- Example of nested vertical slides --&gt;
 &lt;section&gt;
     &lt;h2&gt;W3進度&lt;/h2&gt;
+    @others
 &lt;/section&gt;
 
 </t>
@@ -651,18 +655,18 @@ console.log( '"customevent" has fired' );
 <t tx="leo.20210313012944.1">&lt;section&gt;
     &lt;h2&gt;主題&lt;/h2&gt;
      &lt;small&gt;&lt;p&gt;分組後與組員討論決定製作機械手臂夾爪，下圖為設計之概念圖。&lt;/p&gt;&lt;/small&gt;
-     &lt;img src="https://github.com/40823108/cd2021/blob/main/images/midterm-1.jpg?raw=true" alt="" width="500" height="500"&gt;   
+     &lt;img src="https://github.com/40823108/cd2021/blob/main/images/midterm-1.jpg?raw=true" alt="" width="500" height="250"&gt;   
     &lt;/p&gt;
 &lt;/section&gt;</t>
 <t tx="leo.20210313014732.1">&lt;section&gt;
     &lt;h2&gt;主題修改&lt;/h2&gt;
      &lt;small&gt;&lt;p&gt;經過設計與思考機械手臂夾爪過於複雜，模擬上可能無法順利進行，本組決定更改主題。&lt;/p&gt;&lt;/small&gt; &lt;small&gt;&lt;p&gt;討論後決定製作Lego-EV3可以透過各種不同的連桿組成所需之形狀。&lt;/p&gt;&lt;/small&gt;
-     &lt;img src="https://github.com/40823108/cd2021/blob/main/images/EV3-1.JPG?raw=true" alt="" width="500" height="500"&gt;
+     &lt;img src="https://github.com/40823108/cd2021/blob/main/images/EV3-1.JPG?raw=true" alt="" width="500" height="250"&gt;
 &lt;/section&gt;</t>
 <t tx="leo.20210313153436.1">&lt;section&gt;
     &lt;h2&gt;理想模型&lt;/h2&gt;
      &lt;small&gt;&lt;p&gt;下圖為參考Lego-EV3，所繪製之概念圖&lt;/p&gt;&lt;/small&gt;
-     &lt;img src="https://github.com/40823108/cd2021/blob/main/images/EV3-1.JPG?raw=true" alt="" width="500" height="500"&gt;
+     &lt;img src="https://github.com/40823108/cd2021/blob/main/images/EV3-1.JPG?raw=true" alt="" width="500" height="250"&gt;
 &lt;/section&gt;</t>
 <t tx="leo.20210313155246.1">&lt;section&gt;
     &lt;h2&gt;設計&lt;/h2&gt;
@@ -674,7 +678,16 @@ console.log( '"customevent" has fired' );
             &lt;li&gt;具有4個輸入端與4個輸出端&lt;/li&gt;
             &lt;li&gt;可與iOS/Android/Windows裝置遙控或互動&lt;/li&gt;
     &lt;/ul&gt;
-     &lt;img src="https://github.com/40823108/cd2021/blob/main/images/EV3-1.JPG?raw=true" alt="" width="500" height="500"&gt;
+&lt;/section&gt;</t>
+<t tx="leo.20210313161232.1">&lt;section&gt;
+    &lt;h2&gt;主機繪製&lt;/h2&gt;
+     &lt;small&gt;&lt;p&gt;下圖為Lego-EV3主機繪製過程圖&lt;/p&gt;&lt;/small&gt;
+     &lt;img src="https://github.com/40823108/cd2021/blob/main/images/EV3-2.jpg?raw=true" alt="" width="500" height="250"&gt;
+&lt;/section&gt;</t>
+<t tx="leo.20210313161447.1">&lt;section&gt;
+    &lt;h2&gt;馬達繪製&lt;/h2&gt;
+     &lt;small&gt;&lt;p&gt;下圖為Lego-EV3馬達繪製與主機配合樣圖&lt;/p&gt;&lt;/small&gt;
+     &lt;img src="https://github.com/40823108/cd2021/blob/main/images/EV3-3.jpg?raw=true" alt="" width="500" height="250"&gt;
 &lt;/section&gt;</t>
 </tnodes>
 </leo_file>
