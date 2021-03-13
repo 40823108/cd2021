@@ -20,6 +20,7 @@
 <v t="leo.20200818170222.1"><vh>slides div</vh>
 <v t="leo.20200818170328.1"><vh>slide 1</vh></v>
 <v t="leo.20200818170535.1"><vh>slide 2</vh>
+<v t="leo.20210313163231.1"><vh>slide2-0</vh></v>
 <v t="leo.20210313012944.1"><vh>slide2-1</vh></v>
 <v t="leo.20210313014732.1"><vh>slide2-2</vh></v>
 <v t="leo.20210313153436.1"><vh>slide2-3</vh></v>
@@ -28,6 +29,7 @@
 <v t="leo.20210313161447.1"><vh>slide2-6</vh></v>
 </v>
 <v t="leo.20200818170636.1"><vh>slide3</vh>
+<v t="leo.20210313164304.1"><vh>slide3-0</vh></v>
 <v t="leo.20200818170909.1"><vh>slide 3-1</vh></v>
 <v t="leo.20200818170953.1"><vh>slide 3-2</vh></v>
 <v t="leo.20200818171010.1"><vh>slide 3-3</vh></v>
@@ -224,14 +226,12 @@ vertical: body pane on the botton</t>
 </t>
 <t tx="leo.20200818170535.1">&lt;!-- Example of nested vertical slides --&gt;
 &lt;section&gt;
-    &lt;h2&gt;W2進度&lt;/h2&gt;
     @others
 &lt;/section&gt;
 
 </t>
 <t tx="leo.20200818170636.1">&lt;!-- Example of nested vertical slides --&gt;
 &lt;section&gt;
-    &lt;h2&gt;W3進度&lt;/h2&gt;
     @others
 &lt;/section&gt;
 
@@ -245,27 +245,19 @@ vertical: body pane on the botton</t>
 
 </t>
 <t tx="leo.20200818170909.1">&lt;section&gt;
-    &lt;h2&gt;Vertical Slides&lt;/h2&gt;
-    &lt;p&gt;Slides can be nested inside of each other.&lt;/p&gt;
-    &lt;p&gt;Use the &lt;em&gt;Space&lt;/em&gt; key to navigate through all slides.&lt;/p&gt;
-    &lt;br&gt;
-    &lt;a href="#" class="navigate-down"&gt;
-        &lt;img class="r-frame" style="background: rgba(255,255,255,0.1);" width="178" height="238" data-src="https://static.slid.es/reveal/arrow.png" alt="Down arrow"&gt;
-    &lt;/a&gt;
-&lt;/section&gt;
-</t>
+    &lt;h2&gt;連桿繪製&lt;/h2&gt;
+     &lt;small&gt;&lt;p&gt;將所需之連桿繪製出來，可依想組裝之方式做組裝及設計連桿&lt;/p&gt;&lt;/small&gt;
+     &lt;p&gt;&lt;img src="https://github.com/40823108/cd2021/blob/main/images/EV3-4.jpg?raw=truee" alt="" width="500" height="250"&gt;&lt;/p&gt;
+&lt;/section&gt;</t>
 <t tx="leo.20200818170953.1">&lt;section&gt;
-    &lt;h2&gt;Basement Level 1&lt;/h2&gt;
-    &lt;p&gt;Nested slides are useful for adding additional detail underneath a high level horizontal slide.&lt;/p&gt;
-&lt;/section&gt;
-</t>
+    &lt;h2&gt;組裝&lt;/h2&gt;
+     &lt;small&gt;&lt;p&gt;完成所需之物件後，將連桿、主機、馬達、輪胎裝上就能夠完成一台可程式控制的小車&lt;/p&gt;&lt;/small&gt;
+     &lt;p&gt;&lt;img src="https://github.com/40823108/cd2021/blob/main/images/EV3-5.jpg?raw=true" alt="" width="500" height="250"&gt;&lt;/p&gt;
+&lt;/section&gt;</t>
 <t tx="leo.20200818171010.1">&lt;section&gt;
-    &lt;h2&gt;Basement Level 2&lt;/h2&gt;
-    &lt;p&gt;That's it, time to go back up.&lt;/p&gt;
-    &lt;br&gt;
-    &lt;a href="#/2"&gt;
-        &lt;img class="r-frame" style="background: rgba(255,255,255,0.1); transform: rotate(180deg);" width="178" height="238" data-src="https://static.slid.es/reveal/arrow.png" alt="Up arrow"&gt;
-    &lt;/a&gt;
+    &lt;h2&gt;渲染&lt;/h2&gt;
+     &lt;small&gt;&lt;p&gt;使用Inventor內建功能，將模型擬真，更能呈現產品之真實性&lt;/p&gt;&lt;/small&gt;
+     &lt;p&gt;&lt;img src="https://github.com/40823108/cd2021/blob/main/images/EV3-6.jpg?raw=true" alt="" width="500" height="250"&gt;&lt;/p&gt;
 &lt;/section&gt;</t>
 <t tx="leo.20200818171138.1">&lt;section data-auto-animate&gt;
     &lt;h2 data-id="code-title"&gt;Pretty Code&lt;/h2&gt;
@@ -655,21 +647,20 @@ console.log( '"customevent" has fired' );
 <t tx="leo.20210313012944.1">&lt;section&gt;
     &lt;h2&gt;主題&lt;/h2&gt;
      &lt;small&gt;&lt;p&gt;分組後與組員討論決定製作機械手臂夾爪，下圖為設計之概念圖。&lt;/p&gt;&lt;/small&gt;
-     &lt;img src="https://github.com/40823108/cd2021/blob/main/images/midterm-1.jpg?raw=true" alt="" width="500" height="250"&gt;   
-    &lt;/p&gt;
+     &lt;p&gt;&lt;img src="https://github.com/40823108/cd2021/blob/main/images/midterm-1.jpg?raw=true" alt="" width="500" height="250"&gt;&lt;/p&gt;
 &lt;/section&gt;</t>
 <t tx="leo.20210313014732.1">&lt;section&gt;
     &lt;h2&gt;主題修改&lt;/h2&gt;
-     &lt;small&gt;&lt;p&gt;經過設計與思考機械手臂夾爪過於複雜，模擬上可能無法順利進行，本組決定更改主題。&lt;/p&gt;&lt;/small&gt; &lt;small&gt;&lt;p&gt;討論後決定製作Lego-EV3可以透過各種不同的連桿組成所需之形狀。&lt;/p&gt;&lt;/small&gt;
+     &lt;small&gt;&lt;p&gt;經過設計思考機械手臂夾爪過於複雜，模擬上可能無法順利進行，決定更改主題。&lt;/p&gt;&lt;/small&gt; &lt;small&gt;&lt;p&gt;討論後決定製作Lego-EV3可以透過各種不同的連桿組成所需之形狀。&lt;/p&gt;&lt;/small&gt;
      &lt;img src="https://github.com/40823108/cd2021/blob/main/images/EV3-1.JPG?raw=true" alt="" width="500" height="250"&gt;
 &lt;/section&gt;</t>
 <t tx="leo.20210313153436.1">&lt;section&gt;
     &lt;h2&gt;理想模型&lt;/h2&gt;
      &lt;small&gt;&lt;p&gt;下圖為參考Lego-EV3，所繪製之概念圖&lt;/p&gt;&lt;/small&gt;
-     &lt;img src="https://github.com/40823108/cd2021/blob/main/images/EV3-1.JPG?raw=true" alt="" width="500" height="250"&gt;
+     &lt;p&gt;&lt;img src="https://github.com/40823108/cd2021/blob/main/images/EV3-1.JPG?raw=true" alt="" width="500" height="250"&gt;&lt;/p&gt;
 &lt;/section&gt;</t>
 <t tx="leo.20210313155246.1">&lt;section&gt;
-    &lt;h2&gt;設計&lt;/h2&gt;
+    &lt;h2&gt;Lego-EV3&lt;/h2&gt;
      &lt;small&gt;&lt;p&gt;開始繪製有關Lego-EV3所需之模組，首先繪製控制馬達與感測器之主機本體。&lt;/p&gt;&lt;/small&gt;
      &lt;ul&gt;
             &lt;li&gt;ARM9處理器&lt;/li&gt;
@@ -682,12 +673,18 @@ console.log( '"customevent" has fired' );
 <t tx="leo.20210313161232.1">&lt;section&gt;
     &lt;h2&gt;主機繪製&lt;/h2&gt;
      &lt;small&gt;&lt;p&gt;下圖為Lego-EV3主機繪製過程圖&lt;/p&gt;&lt;/small&gt;
-     &lt;img src="https://github.com/40823108/cd2021/blob/main/images/EV3-2.jpg?raw=true" alt="" width="500" height="250"&gt;
+     &lt;p&gt;&lt;img src="https://github.com/40823108/cd2021/blob/main/images/EV3-2.jpg?raw=true" alt="" width="500" height="250"&gt;&lt;/p&gt;
 &lt;/section&gt;</t>
 <t tx="leo.20210313161447.1">&lt;section&gt;
     &lt;h2&gt;馬達繪製&lt;/h2&gt;
      &lt;small&gt;&lt;p&gt;下圖為Lego-EV3馬達繪製與主機配合樣圖&lt;/p&gt;&lt;/small&gt;
-     &lt;img src="https://github.com/40823108/cd2021/blob/main/images/EV3-3.jpg?raw=true" alt="" width="500" height="250"&gt;
+     &lt;p&gt;&lt;img src="https://github.com/40823108/cd2021/blob/main/images/EV3-3.jpg?raw=true" alt="" width="500" height="250"&gt;&lt;/p&gt;
+&lt;/section&gt;</t>
+<t tx="leo.20210313163231.1">&lt;section&gt;
+    &lt;h2&gt;W2進度&lt;/h2&gt;
+&lt;/section&gt;</t>
+<t tx="leo.20210313164304.1">&lt;section&gt;
+    &lt;h2&gt;W3進度&lt;/h2&gt;
 &lt;/section&gt;</t>
 </tnodes>
 </leo_file>
