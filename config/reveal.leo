@@ -228,10 +228,22 @@ vertical: body pane on the botton</t>
     @others
 &lt;/div&gt;</t>
 <t tx="leo.20200818170328.1">&lt;section&gt;
-        &lt;h1&gt;NFU-MDE-40823108-KAO,YU-CHE-cd2021&lt;h1&gt;
+        &lt;h2&gt;NFU-MDE-40823108-KAO,YU-CHE-cd2021&lt;h2&gt;
+        &lt;p&gt;&lt;small&gt;Created by &lt;a href="https://40823108.github.io/cd2021/content/index.html"&gt;40823108&lt;/a&gt;&lt;/small&gt;&lt;/p&gt;
         &lt;p&gt;
-        &lt;small&gt;Created by &lt;a href="https://40823108.github.io/cd2021/content/index.html"&gt;40823108&lt;/a&gt;&lt;/small&gt;
-        &lt;/p&gt;
+	                            &lt;small&gt; Date today:
+	                            &lt;script&gt; 
+	                            //var today=new Date(); document.write(today);
+	                            var today = new Date();
+	                            var dd = today.getDate();
+	                            var mm = today.getMonth()+1; //January is 0!
+
+	                            var yyyy = today.getFullYear();
+	                            if(dd&lt;10){dd='0'+dd} if(mm&lt;10){mm='0'+mm} today = mm+'/'+dd+'/'+yyyy;
+	                            document.write(today);
+	                      		&lt;/script&gt;  
+	                        &lt;/small&gt;
+	                        &lt;/p&gt;
 &lt;/section&gt;
 
 </t>
@@ -739,8 +751,8 @@ console.log( '"customevent" has fired' );
      &lt;p&gt;&lt;iframe width="560" height="315" src="https://www.youtube.com/embed/ASH91DmuYBk" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen&gt;&lt;/iframe&gt;&lt;/p&gt;
 &lt;/section&gt;</t>
 <t tx="leo.20210313173803.1">&lt;section&gt;
-    &lt;h2&gt;Lego-EV3產品設計報告書&lt;/h2&gt;
-    &lt;p&gt;&lt;iframe height="580" src="https://drive.google.com/file/d/1VTZRCIs_ifjLimdZAVUOUr5o4abNILUg/preview" width="640"&gt;&lt;/iframe&gt;&lt;/p&gt;
+    &lt;h4&gt;Lego-EV3產品設計報告書&lt;/h4&gt;
+    &lt;p&gt;&lt;iframe height="620" src="https://drive.google.com/file/d/1VTZRCIs_ifjLimdZAVUOUr5o4abNILUg/preview" width="550"&gt;&lt;/iframe&gt;&lt;/p&gt;
 &lt;/section&gt;</t>
 </tnodes>
 </leo_file>
