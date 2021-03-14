@@ -215,7 +215,7 @@ vertical: body pane on the botton</t>
 
     &lt;link rel="stylesheet" href="dist/reset.css"&gt;
     &lt;link rel="stylesheet" href="dist/reveal.css"&gt;
-    &lt;link rel="stylesheet" href="dist/theme/black.css" id="theme"&gt;
+    &lt;link rel="stylesheet" href="dist/theme/beige.css" id="theme"&gt;
 
     &lt;!-- Theme used for syntax highlighting of code --&gt;
     &lt;link rel="stylesheet" href="plugin/highlight/monokai.css" id="highlight-theme"&gt;
