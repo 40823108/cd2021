@@ -26,6 +26,7 @@
 <v t="leo.20210317235602.1"><vh>slide1-4</vh></v>
 <v t="leo.20210317235647.1"><vh>slide1-5</vh></v>
 <v t="leo.20210317235715.1"><vh>slide1-6</vh></v>
+<v t="leo.20210318000958.1"><vh>slide1-7</vh></v>
 </v>
 <v t="leo.20200818170535.1"><vh>slide 2</vh>
 <v t="leo.20210313163231.1"><vh>slide2-0</vh></v>
@@ -832,6 +833,11 @@ console.log( '"customevent" has fired' );
             &lt;/section&gt;</t>
 <t tx="leo.20210318000141.1">&lt;section data-transition="slide" data-background="#FAFAFA " data-background-transition="convex"&gt;
             &lt;script src="https://embed.github.com/view/3d/40823108/cd2021/main/EV3-Ontology-1.0.stl"&gt;&lt;/script&gt;
+            &lt;/section&gt;</t>
+<t tx="leo.20210318000958.1">&lt;section data-transition="slide" data-background-transition="convex"&gt;
+                &lt;h2&gt;問題1&lt;/h2&gt;
+                &lt;small&gt;&lt;p&gt;將EV3 STL黨匯入webots，全部的零件會變成整塊實體，所以將需要做動的輪胎部分先拆除，在webots中重建，但在webots中重建的輪胎顯示不出來，問題尚在解決當中&lt;/p&gt;&lt;/small&gt;
+                &lt;p&gt;&lt;img src="https://github.com/40823145/cd2021/blob/main/images/wheel%20error.png?raw=true"" alt="" width="500" height="250"&gt;&lt;/p&gt;
             &lt;/section&gt;</t>
 </tnodes>
 </leo_file>
