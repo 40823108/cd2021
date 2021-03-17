@@ -248,34 +248,34 @@ vertical: body pane on the botton</t>
 
 </t>
 <t tx="leo.20200818170535.1">&lt;!-- Example of nested vertical slides --&gt;
-&lt;section data-transition="slide" data-background-transition="zoom"&gt;
+&lt;section data-transition="slide" data-background-transition="convex"&gt;
     @others
 &lt;/section&gt;
 
 </t>
 <t tx="leo.20200818170636.1">&lt;!-- Example of nested vertical slides --&gt;
-&lt;section data-transition="slide" data-background-transition="zoom"&gt;
+&lt;section data-transition="slide" data-background-transition="convex"&gt;
     @others
 &lt;/section&gt;
 
 </t>
 <t tx="leo.20200818170725.1">&lt;!-- Example of nested vertical slides --&gt;
-&lt;section data-transition="slide" data-background-transition="zoom"&gt;
+&lt;section data-transition="slide" data-background-transition="convex"&gt;
     @others
 &lt;/section&gt;
 
 </t>
-<t tx="leo.20200818170909.1">&lt;section data-transition="slide" data-background="#A500CC" data-background-transition="zoom"&gt;
+<t tx="leo.20200818170909.1">&lt;section data-transition="slide" data-background="#A500CC" data-background-transition="convex"&gt;
     &lt;h2&gt;連桿繪製&lt;/h2&gt;
      &lt;small&gt;&lt;p&gt;將所需之連桿繪製出來，可依想組裝之方式做組裝及設計連桿&lt;/p&gt;&lt;/small&gt;
      &lt;p&gt;&lt;img src="https://github.com/40823108/cd2021/blob/main/images/EV3-4.jpg?raw=truee" alt="" width="500" height="250"&gt;&lt;/p&gt;
 &lt;/section&gt;</t>
-<t tx="leo.20200818170953.1">&lt;section data-transition="slide" data-background="#4400CC" data-background-transition="zoom"&gt;
+<t tx="leo.20200818170953.1">&lt;section data-transition="slide" data-background="#4400CC" data-background-transition="convex"&gt;
     &lt;h2&gt;組裝&lt;/h2&gt;
      &lt;small&gt;&lt;p&gt;完成所需之物件後，將連桿、主機、馬達、輪胎裝上就能夠完成一台可程式控制的小車&lt;/p&gt;&lt;/small&gt;
      &lt;p&gt;&lt;img src="https://github.com/40823108/cd2021/blob/main/images/EV3-5.jpg?raw=true" alt="" width="500" height="250"&gt;&lt;/p&gt;
 &lt;/section&gt;</t>
-<t tx="leo.20200818171010.1">&lt;section data-transition="slide" data-background="#009FCC" data-background-transition="zoom"&gt;
+<t tx="leo.20200818171010.1">&lt;section data-transition="slide" data-background="#009FCC" data-background-transition="convex"&gt;
     &lt;h2&gt;渲染&lt;/h2&gt;
      &lt;small&gt;&lt;p&gt;使用Inventor內建功能，將模型擬真，更能呈現產品之真實性&lt;/p&gt;&lt;/small&gt;
      &lt;p&gt;&lt;img src="https://github.com/40823108/cd2021/blob/main/images/EV3-6.jpg?raw=true" alt="" width="500" height="250"&gt;&lt;/p&gt;
@@ -665,22 +665,22 @@ console.log( '"customevent" has fired' );
         - &lt;a href="https://github.com/hakimel/reveal.js"&gt;Source code &amp;amp; documentation&lt;/a&gt;
     &lt;/p&gt;
 &lt;/section&gt;</t>
-<t tx="leo.20210313012944.1">&lt;section data-transition="slide" data-background="#A500CC" data-background-transition="zoom"&gt;
+<t tx="leo.20210313012944.1">&lt;section data-transition="slide" data-background="#A500CC" data-background-transition="convex"&gt;
     &lt;h2&gt;主題&lt;/h2&gt;
      &lt;small&gt;&lt;p&gt;分組後與組員討論決定製作機械手臂夾爪，下圖為設計之概念圖。&lt;/p&gt;&lt;/small&gt;
      &lt;p&gt;&lt;img src="https://github.com/40823108/cd2021/blob/main/images/midterm-1.jpg?raw=true" alt="" width="500" height="250"&gt;&lt;/p&gt;
 &lt;/section&gt;</t>
-<t tx="leo.20210313014732.1">&lt;section data-transition="slide" data-background="#4400CC" data-background-transition="zoom"&gt;
+<t tx="leo.20210313014732.1">&lt;section data-transition="slide" data-background="#4400CC" data-background-transition="convex"&gt;
     &lt;h2&gt;主題修改&lt;/h2&gt;
      &lt;small&gt;&lt;p&gt;經過設計思考機械手臂夾爪過於複雜，模擬上可能無法順利進行，決定更改主題。&lt;/p&gt;&lt;/small&gt; &lt;small&gt;&lt;p&gt;討論後決定製作Lego-EV3可以透過各種不同的連桿組成所需之形狀。&lt;/p&gt;&lt;/small&gt;
      &lt;img src="https://github.com/40823108/cd2021/blob/main/images/EV3-1.JPG?raw=true" alt="" width="500" height="250"&gt;
 &lt;/section&gt;</t>
-<t tx="leo.20210313153436.1">&lt;section data-transition="slide" data-background="#009FCC" data-background-transition="zoom"&gt;
+<t tx="leo.20210313153436.1">&lt;section data-transition="slide" data-background="#009FCC" data-background-transition="convex"&gt;
     &lt;h2&gt;理想模型&lt;/h2&gt;
      &lt;small&gt;&lt;p&gt;下圖為參考Lego-EV3，所繪製之概念圖&lt;/p&gt;&lt;/small&gt;
      &lt;p&gt;&lt;img src="https://github.com/40823108/cd2021/blob/main/images/EV3-1.JPG?raw=true" alt="" width="500" height="250"&gt;&lt;/p&gt;
 &lt;/section&gt;</t>
-<t tx="leo.20210313155246.1">&lt;section data-transition="slide" data-background="#00DDDD" data-background-transition="zoom"&gt;
+<t tx="leo.20210313155246.1">&lt;section data-transition="slide" data-background="#00DDDD" data-background-transition="convex"&gt;
     &lt;h2&gt;Lego-EV3&lt;/h2&gt;
      &lt;small&gt;&lt;p&gt;開始繪製有關Lego-EV3所需之模組，首先繪製控制馬達與感測器之主機本體。&lt;/p&gt;&lt;/small&gt;
      &lt;ul&gt;
@@ -691,66 +691,66 @@ console.log( '"customevent" has fired' );
             &lt;li&gt;可與iOS/Android/Windows裝置遙控或互動&lt;/li&gt;
     &lt;/ul&gt;
 &lt;/section&gt;</t>
-<t tx="leo.20210313161232.1">&lt;section data-transition="slide" data-background="#00DD00" data-background-transition="zoom"&gt;
+<t tx="leo.20210313161232.1">&lt;section data-transition="slide" data-background="#00DD00" data-background-transition="convex"&gt;
     &lt;h2&gt;主機繪製&lt;/h2&gt;
      &lt;small&gt;&lt;p&gt;下圖為Lego-EV3主機繪製過程圖&lt;/p&gt;&lt;/small&gt;
      &lt;p&gt;&lt;img src="https://github.com/40823108/cd2021/blob/main/images/EV3-2.jpg?raw=true" alt="" width="500" height="250"&gt;&lt;/p&gt;
 &lt;/section&gt;</t>
-<t tx="leo.20210313161447.1">&lt;section data-transition="slide" data-background="#99DD00" data-background-transition="zoom"&gt;
+<t tx="leo.20210313161447.1">&lt;section data-transition="slide" data-background="#99DD00" data-background-transition="convex"&gt;
     &lt;h2&gt;馬達繪製&lt;/h2&gt;
      &lt;small&gt;&lt;p&gt;下圖為Lego-EV3馬達繪製與主機配合樣圖&lt;/p&gt;&lt;/small&gt;
      &lt;p&gt;&lt;img src="https://github.com/40823108/cd2021/blob/main/images/EV3-3.jpg?raw=true" alt="" width="500" height="250"&gt;&lt;/p&gt;
 &lt;/section&gt;</t>
-<t tx="leo.20210313163231.1">&lt;section data-transition="slide" data-background="#CC00CC" data-background-transition="zoom"&gt;
+<t tx="leo.20210313163231.1">&lt;section data-transition="slide" data-background="#CC00CC" data-background-transition="convex"&gt;
     &lt;h2&gt;W2進度&lt;/h2&gt;
 &lt;/section&gt;</t>
-<t tx="leo.20210313164304.1">&lt;section data-transition="slide" data-background="#CC00CC" data-background-transition="zoom"&gt;
+<t tx="leo.20210313164304.1">&lt;section data-transition="slide" data-background="#CC00CC" data-background-transition="convex"&gt;
     &lt;h2&gt;W3進度&lt;/h2&gt;
 &lt;/section&gt;</t>
-<t tx="leo.20210313165904.1">&lt;section data-transition="slide" data-background="#00DDDD" data-background-transition="zoom"&gt;
+<t tx="leo.20210313165904.1">&lt;section data-transition="slide" data-background="#00DDDD" data-background-transition="convex"&gt;
     &lt;h2&gt;簡化零件&lt;/h2&gt;
      &lt;small&gt;&lt;p&gt;為了能夠方便模擬，我們將部分零件做簡化，讓模擬時不會因為過多的零件導致模擬失敗&lt;/p&gt;&lt;/small&gt;
      &lt;p&gt;&lt;img src="https://github.com/40823108/cd2021/blob/main/images/EV3-9.JPG?raw=true" alt="" width="500" height="250"&gt;&lt;/p&gt;
 &lt;/section&gt;</t>
-<t tx="leo.20210313171017.1">&lt;section data-transition="slide" data-background="#00DD00" data-background-transition="zoom"&gt;
+<t tx="leo.20210313171017.1">&lt;section data-transition="slide" data-background="#00DD00" data-background-transition="convex"&gt;
     &lt;h2&gt;模擬1&lt;/h2&gt;
      &lt;small&gt;&lt;p&gt;第一次模擬因為零件過多，需要調整許多參數，導致在模擬過程中遇到許多問題，也導致模擬失敗&lt;/p&gt;&lt;/small&gt;
      &lt;p&gt;&lt;img src="https://github.com/40823108/cd2021/blob/main/images/EV3-10.JPG?raw=true" alt="" width="500" height="250"&gt;&lt;/p&gt;
 &lt;/section&gt;</t>
-<t tx="leo.20210313171324.1">&lt;section data-transition="slide" data-background="#99DD00" data-background-transition="zoom"&gt;
+<t tx="leo.20210313171324.1">&lt;section data-transition="slide" data-background="#99DD00" data-background-transition="convex"&gt;
     &lt;h2&gt;模擬2&lt;/h2&gt;
      &lt;small&gt;&lt;p&gt;在經過零件簡化後，模擬上的問題也減少了，需要設定的參數也相對變少，最後成功讓小車可以移動&lt;/p&gt;&lt;/small&gt;
      &lt;p&gt;&lt;img src="https://github.com/40823108/cd2021/blob/main/images/EV3-11.JPG?raw=true" alt="" width="500" height="250"&gt;&lt;/p&gt;
 &lt;/section&gt;</t>
-<t tx="leo.20210313171838.1">&lt;section data-transition="slide" data-background="#CC00CC" data-background-transition="zoom"&gt;
+<t tx="leo.20210313171838.1">&lt;section data-transition="slide" data-background="#CC00CC" data-background-transition="convex"&gt;
     &lt;h2&gt;W4進度&lt;/h2&gt;
 &lt;/section&gt;</t>
-<t tx="leo.20210313171930.1">&lt;section data-transition="slide" data-background="#A500CC" data-background-transition="zoom"&gt;
+<t tx="leo.20210313171930.1">&lt;section data-transition="slide" data-background="#A500CC" data-background-transition="convex"&gt;
     &lt;h2&gt;2D 工程圖&lt;/h2&gt;
      &lt;small&gt;&lt;p&gt;主機工程圖&lt;/p&gt;&lt;/small&gt;
      &lt;p&gt;&lt;img src="https://github.com/40823108/cd2021/blob/main/images/EV3-8.JPG?raw=true" alt="" width="500" height="350"&gt;&lt;/p&gt;
 &lt;/section&gt;</t>
-<t tx="leo.20210313172512.1">&lt;section data-transition="slide" data-background="#4400CC" data-background-transition="zoom"&gt;
+<t tx="leo.20210313172512.1">&lt;section data-transition="slide" data-background="#4400CC" data-background-transition="convex"&gt;
     &lt;h2&gt;3D 爆炸圖&lt;/h2&gt;
      &lt;small&gt;&lt;p&gt;爆炸圖包含BOM&lt;/p&gt;&lt;/small&gt;
      &lt;p&gt;&lt;img src="https://github.com/40823108/cd2021/blob/main/images/EV3-7.JPG?raw=true" alt="" width="500" height="350"&gt;&lt;/p&gt;
 &lt;/section&gt;</t>
-<t tx="leo.20210313172801.1">&lt;section data-transition="slide" data-background="#009FCC" data-background-transition="zoom"&gt;
+<t tx="leo.20210313172801.1">&lt;section data-transition="slide" data-background="#009FCC" data-background-transition="convex"&gt;
     &lt;h2&gt;3D 模型&lt;/h2&gt;
      &lt;small&gt;&lt;p&gt;完成模型&lt;/p&gt;&lt;/small&gt;
      &lt;p&gt;&lt;img src="https://github.com/40823108/cd2021/blob/main/images/EV3-5.jpg?raw=true" alt="" width="500" height="250"&gt;&lt;/p&gt;
 &lt;/section&gt;</t>
-<t tx="leo.20210313173217.1">&lt;section data-transition="slide" data-background="#00DDDD" data-background-transition="zoom"&gt;
+<t tx="leo.20210313173217.1">&lt;section data-transition="slide" data-background="#00DDDD" data-background-transition="convex"&gt;
     &lt;h2&gt;模擬1&lt;/h2&gt;
      &lt;small&gt;&lt;p&gt;因零件過多導致模擬失敗&lt;/p&gt;&lt;/small&gt;
      &lt;p&gt;&lt;iframe width="560" height="315" src="https://www.youtube.com/embed/CO1Vg2Ma95k" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen&gt;&lt;/iframe&gt;&lt;/p&gt;
 &lt;/section&gt;</t>
-<t tx="leo.20210313173710.1">&lt;section data-transition="slide" data-background="#00DD00" data-background-transition="zoom"&gt;
+<t tx="leo.20210313173710.1">&lt;section data-transition="slide" data-background="#00DD00" data-background-transition="convex"&gt;
     &lt;h2&gt;模擬1&lt;/h2&gt;
      &lt;small&gt;&lt;p&gt;因零件過多導致模擬失敗&lt;/p&gt;&lt;/small&gt;
      &lt;p&gt;&lt;iframe width="560" height="315" src="https://www.youtube.com/embed/ASH91DmuYBk" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen&gt;&lt;/iframe&gt;&lt;/p&gt;
 &lt;/section&gt;</t>
-<t tx="leo.20210313173803.1">&lt;section data-transition="slide" data-background="#99DD00" data-background-transition="zoom"&gt;
+<t tx="leo.20210313173803.1">&lt;section data-transition="slide" data-background="#99DD00" data-background-transition="convex"&gt;
     &lt;h4&gt;Lego-EV3產品設計報告書&lt;/h4&gt;
     &lt;p&gt;&lt;iframe height="620" src="https://drive.google.com/file/d/1VTZRCIs_ifjLimdZAVUOUr5o4abNILUg/preview" width="550"&gt;&lt;/iframe&gt;&lt;/p&gt;
 &lt;/section&gt;</t>
