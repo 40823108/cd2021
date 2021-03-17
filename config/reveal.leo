@@ -18,7 +18,15 @@
 <v t="leo.20200818165413.1"><vh>body</vh>
 <v t="leo.20200818170041.1"><vh>reveal div</vh>
 <v t="leo.20200818170222.1"><vh>slides div</vh>
-<v t="leo.20200818170328.1"><vh>slide 1</vh></v>
+<v t="leo.20200818170328.1"><vh>slide 1</vh>
+<v t="leo.20210317234900.1"><vh>slide1-0</vh></v>
+<v t="leo.20210317235107.1"><vh>slide1-1</vh></v>
+<v t="leo.20210317235331.1"><vh>slide1-2</vh></v>
+<v t="leo.20210317235413.1"><vh>slide1-3</vh></v>
+<v t="leo.20210317235602.1"><vh>slide1-4</vh></v>
+<v t="leo.20210317235647.1"><vh>slide1-5</vh></v>
+<v t="leo.20210317235715.1"><vh>slide1-6</vh></v>
+</v>
 <v t="leo.20200818170535.1"><vh>slide 2</vh>
 <v t="leo.20210313163231.1"><vh>slide2-0</vh></v>
 <v t="leo.20210313012944.1"><vh>slide2-1</vh></v>
@@ -36,6 +44,7 @@
 <v t="leo.20210313165904.1"><vh>slide3-4</vh></v>
 <v t="leo.20210313171017.1"><vh>slide3-5</vh></v>
 <v t="leo.20210313171324.1"><vh>slide3-6</vh></v>
+<v t="leo.20210318000141.1"><vh>slide3-7</vh></v>
 </v>
 <v t="leo.20200818170725.1"><vh>slide 4</vh>
 <v t="leo.20210313171838.1"><vh>slide4-0</vh></v>
@@ -227,23 +236,9 @@ vertical: body pane on the botton</t>
 &lt;div class="slides"&gt;
     @others
 &lt;/div&gt;</t>
-<t tx="leo.20200818170328.1">&lt;section&gt;
-        &lt;h2&gt;NFU-MDE-40823108-cd2021&lt;h2&gt;
-        &lt;p&gt;&lt;small&gt;Created by &lt;a href="https://40823108.github.io/cd2021/content/index.html"&gt;40823108&lt;/a&gt;&lt;/small&gt;&lt;/p&gt;
-        &lt;p&gt;
-	                            &lt;small&gt; Date today:
-	                            &lt;script&gt; 
-	                            //var today=new Date(); document.write(today);
-	                            var today = new Date();
-	                            var dd = today.getDate();
-	                            var mm = today.getMonth()+1; //January is 0!
-
-	                            var yyyy = today.getFullYear();
-	                            if(dd&lt;10){dd='0'+dd} if(mm&lt;10){mm='0'+mm} today = mm+'/'+dd+'/'+yyyy;
-	                            document.write(today);
-	                      		&lt;/script&gt;  
-	                        &lt;/small&gt;
-	                        &lt;/p&gt;
+<t tx="leo.20200818170328.1">&lt;!-- Example of nested vertical slides --&gt;
+&lt;section data-transition="slide" data-background-transition="convex"&gt;
+    @others
 &lt;/section&gt;
 
 </t>
@@ -701,10 +696,10 @@ console.log( '"customevent" has fired' );
      &lt;small&gt;&lt;p&gt;下圖為Lego-EV3馬達繪製與主機配合樣圖&lt;/p&gt;&lt;/small&gt;
      &lt;p&gt;&lt;img src="https://github.com/40823108/cd2021/blob/main/images/EV3-3.jpg?raw=true" alt="" width="500" height="250"&gt;&lt;/p&gt;
 &lt;/section&gt;</t>
-<t tx="leo.20210313163231.1">&lt;section data-transition="slide" data-background="#CC00CC" data-background-transition="convex"&gt;
+<t tx="leo.20210313163231.1">&lt;section data-transition="slide" data-background="#FFED97" data-background-transition="convex"&gt;
     &lt;h2&gt;W2進度&lt;/h2&gt;
 &lt;/section&gt;</t>
-<t tx="leo.20210313164304.1">&lt;section data-transition="slide" data-background="#CC00CC" data-background-transition="convex"&gt;
+<t tx="leo.20210313164304.1">&lt;section data-transition="slide" data-background="#FFFFAA" data-background-transition="convex"&gt;
     &lt;h2&gt;W3進度&lt;/h2&gt;
 &lt;/section&gt;</t>
 <t tx="leo.20210313165904.1">&lt;section data-transition="slide" data-background="#00DDDD" data-background-transition="convex"&gt;
@@ -722,7 +717,7 @@ console.log( '"customevent" has fired' );
      &lt;small&gt;&lt;p&gt;在經過零件簡化後，模擬上的問題也減少了，需要設定的參數也相對變少，最後成功讓小車可以移動&lt;/p&gt;&lt;/small&gt;
      &lt;p&gt;&lt;img src="https://github.com/40823108/cd2021/blob/main/images/EV3-11.JPG?raw=true" alt="" width="500" height="250"&gt;&lt;/p&gt;
 &lt;/section&gt;</t>
-<t tx="leo.20210313171838.1">&lt;section data-transition="slide" data-background="#CC00CC" data-background-transition="convex"&gt;
+<t tx="leo.20210313171838.1">&lt;section data-transition="slide" data-background="#FFED97" data-background-transition="convex"&gt;
     &lt;h2&gt;W4進度&lt;/h2&gt;
 &lt;/section&gt;</t>
 <t tx="leo.20210313171930.1">&lt;section data-transition="slide" data-background="#A500CC" data-background-transition="convex"&gt;
@@ -754,5 +749,89 @@ console.log( '"customevent" has fired' );
     &lt;h4&gt;Lego-EV3產品設計報告書&lt;/h4&gt;
     &lt;p&gt;&lt;iframe height="620" src="https://drive.google.com/file/d/1VTZRCIs_ifjLimdZAVUOUr5o4abNILUg/preview" width="550"&gt;&lt;/iframe&gt;&lt;/p&gt;
 &lt;/section&gt;</t>
+<t tx="leo.20210317234900.1">&lt;section&gt;
+        &lt;h2&gt;NFU-MDE-40823108-cd2021&lt;h2&gt;
+        &lt;p&gt;&lt;small&gt;Created by &lt;a href="https://40823108.github.io/cd2021/content/index.html"&gt;40823108&lt;/a&gt;&lt;/small&gt;&lt;/p&gt;
+        &lt;p&gt;
+	                            &lt;small&gt; Date today:
+	                            &lt;script&gt; 
+	                            //var today=new Date(); document.write(today);
+	                            var today = new Date();
+	                            var dd = today.getDate();
+	                            var mm = today.getMonth()+1; //January is 0!
+
+	                            var yyyy = today.getFullYear();
+	                            if(dd&lt;10){dd='0'+dd} if(mm&lt;10){mm='0'+mm} today = mm+'/'+dd+'/'+yyyy;
+	                            document.write(today);
+	                      		&lt;/script&gt;  
+	                        &lt;/small&gt;
+	                        &lt;/p&gt;
+&lt;/section&gt;
+
+</t>
+<t tx="leo.20210317235107.1">&lt;section data-background-video="https://cyberbotics.com/assets/movies/robots.webm" 
+                      data-background-video-loop data-background-video-muted&gt;
+                &lt;h2&gt;Webots基本操作&lt;/h2&gt;
+                &lt;p&gt;&lt;img src="https://github.com/40823145/cd2021/blob/main/images/webots%20car.png?raw=true"" alt="" width="500" height="250"&gt;&lt;/p&gt;
+            &lt;/section&gt;</t>
+<t tx="leo.20210317235331.1">&lt;section data-background-video="https://cyberbotics.com/assets/movies/robots.webm" 
+                      data-background-video-loop data-background-video-muted&gt;
+&lt;h2&gt;基礎小車&lt;/h2&gt;
+                &lt;iframe width="500" height="250" src="https://www.youtube.com/embed/03QbjQsOLUE" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen&gt;&lt;/iframe&gt;
+            &lt;/section&gt;</t>
+<t tx="leo.20210317235413.1">&lt;section data-background-video="https://cyberbotics.com/assets/movies/robots.webm" 
+                      data-background-video-loop data-background-video-muted&gt;
+                &lt;h2&gt;Webots基本Python避障程式&lt;/h2&gt;
+              &lt;pre&gt;&lt;code data-trim data-noescape&gt;
+               from controller import Robot
+
+            TIME_STEP = 1
+            robot = Robot()
+            ds = []
+            dsNames = ['ds_right', 'ds_left', 'ds_in']
+            for i in range(3):
+                ds.append(robot.getDevice(dsNames[i]))
+                ds[i].enable(TIME_STEP)
+            wheels = []
+            wheelsNames = ['wheel1', 'wheel2', 'wheel3', 'wheel4']
+            for i in range(4):
+                wheels.append(robot.getDevice(wheelsNames[i]))
+                wheels[i].setPosition(float('inf'))
+                wheels[i].setVelocity(0.0)
+            avoidObstacleCounter = 0
+            while robot.step(TIME_STEP) != -1:
+                leftSpeed = 10.0
+                rightSpeed = 10.0
+                if avoidObstacleCounter &gt; 0:
+                    avoidObstacleCounter -= 1
+                    leftSpeed = 1.0
+                    rightSpeed = -1.0
+                else:  # read sensors
+                    for i in range(3):
+                        if ds[i].getValue() &lt; 900.0:
+                            avoidObstacleCounter = 90
+                wheels[0].setVelocity(leftSpeed)
+                wheels[1].setVelocity(rightSpeed)
+                wheels[2].setVelocity(leftSpeed)
+                wheels[3].setVelocity(rightSpeed)
+               &lt;/pre&gt;&lt;p&gt;
+              &lt;/code&gt;&lt;/pre&gt;
+            &lt;/section&gt;</t>
+<t tx="leo.20210317235602.1">&lt;section data-transition="slide" data-background-transition="convex"&gt;
+            &lt;iframe width="560" height="315" src="https://www.youtube.com/embed/vWNkJMrr3b0" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen&gt;&lt;/iframe&gt;
+            &lt;/section&gt;</t>
+<t tx="leo.20210317235647.1">&lt;section data-transition="slide" data-background-transition="convex"&gt;
+                &lt;h2&gt;Webots匯入EV3&lt;/h2&gt;
+                &lt;small&gt;&lt;p&gt;將EV3STL黨匯入webots嘗試讓EV3避障&lt;/p&gt;&lt;/small&gt;
+                &lt;p&gt;&lt;img src="https://github.com/40823145/cd2021/blob/main/images/webots%20ev3.png?raw=true"" alt="" width="500" height="250"&gt;&lt;/p&gt;
+            &lt;/section&gt;</t>
+<t tx="leo.20210317235715.1">&lt;section data-transition="slide" data-background-transition="convex"&gt;
+                &lt;h2&gt;問題&lt;/h2&gt;
+                &lt;small&gt;&lt;p&gt;將EV3 STL黨匯入webots，全部的零件會變成整塊實體，所以將需要做動的輪胎部分先拆除，在webots中重建，但在webots中重建的輪胎顯示不出來，問題尚在解決當中&lt;/p&gt;&lt;/small&gt;
+                &lt;p&gt;&lt;img src="https://github.com/40823145/cd2021/blob/main/images/wheel%20error.png?raw=true"" alt="" width="500" height="250"&gt;&lt;/p&gt;
+            &lt;/section&gt;</t>
+<t tx="leo.20210318000141.1">&lt;section data-transition="slide" data-background="#FAFAFA " data-background-transition="convex"&gt;
+            &lt;script src="https://embed.github.com/view/3d/40823108/cd2021/main/EV3-Ontology-1.0.stl"&gt;&lt;/script&gt;
+            &lt;/section&gt;</t>
 </tnodes>
 </leo_file>

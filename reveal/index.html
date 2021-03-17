@@ -24,28 +24,93 @@
 <div class="reveal">
     <!-- Any section element inside of this container is displayed as a slide -->
     <div class="slides">
-        <section>
-                <h2>NFU-MDE-40823108-cd2021<h2>
-                <p><small>Created by <a href="https://40823108.github.io/cd2021/content/index.html">40823108</a></small></p>
-                <p>
-        	                            <small> Date today:
-        	                            <script> 
-        	                            //var today=new Date(); document.write(today);
-        	                            var today = new Date();
-        	                            var dd = today.getDate();
-        	                            var mm = today.getMonth()+1; //January is 0!
+        <!-- Example of nested vertical slides -->
+        <section data-transition="slide" data-background-transition="convex">
+            <section>
+                    <h2>NFU-MDE-40823108-cd2021<h2>
+                    <p><small>Created by <a href="https://40823108.github.io/cd2021/content/index.html">40823108</a></small></p>
+                    <p>
+            	                            <small> Date today:
+            	                            <script> 
+            	                            //var today=new Date(); document.write(today);
+            	                            var today = new Date();
+            	                            var dd = today.getDate();
+            	                            var mm = today.getMonth()+1; //January is 0!
 
-        	                            var yyyy = today.getFullYear();
-        	                            if(dd<10){dd='0'+dd} if(mm<10){mm='0'+mm} today = mm+'/'+dd+'/'+yyyy;
-        	                            document.write(today);
-        	                      		</script>  
-        	                        </small>
-        	                        </p>
+            	                            var yyyy = today.getFullYear();
+            	                            if(dd<10){dd='0'+dd} if(mm<10){mm='0'+mm} today = mm+'/'+dd+'/'+yyyy;
+            	                            document.write(today);
+            	                      		</script>  
+            	                        </small>
+            	                        </p>
+            </section>
+
+            <section data-background-video="https://cyberbotics.com/assets/movies/robots.webm" 
+                                  data-background-video-loop data-background-video-muted>
+                            <h2>Webots基本操作</h2>
+                            <p><img src="https://github.com/40823145/cd2021/blob/main/images/webots%20car.png?raw=true"" alt="" width="500" height="250"></p>
+                        </section>
+            <section data-background-video="https://cyberbotics.com/assets/movies/robots.webm" 
+                                  data-background-video-loop data-background-video-muted>
+            <h2>基礎小車</h2>
+                            <iframe width="500" height="250" src="https://www.youtube.com/embed/03QbjQsOLUE" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+                        </section>
+            <section data-background-video="https://cyberbotics.com/assets/movies/robots.webm" 
+                                  data-background-video-loop data-background-video-muted>
+                            <h2>Webots基本Python避障程式</h2>
+                          <pre><code data-trim data-noescape>
+                           from controller import Robot
+
+                        TIME_STEP = 1
+                        robot = Robot()
+                        ds = []
+                        dsNames = ['ds_right', 'ds_left', 'ds_in']
+                        for i in range(3):
+                            ds.append(robot.getDevice(dsNames[i]))
+                            ds[i].enable(TIME_STEP)
+                        wheels = []
+                        wheelsNames = ['wheel1', 'wheel2', 'wheel3', 'wheel4']
+                        for i in range(4):
+                            wheels.append(robot.getDevice(wheelsNames[i]))
+                            wheels[i].setPosition(float('inf'))
+                            wheels[i].setVelocity(0.0)
+                        avoidObstacleCounter = 0
+                        while robot.step(TIME_STEP) != -1:
+                            leftSpeed = 10.0
+                            rightSpeed = 10.0
+                            if avoidObstacleCounter > 0:
+                                avoidObstacleCounter -= 1
+                                leftSpeed = 1.0
+                                rightSpeed = -1.0
+                            else:  # read sensors
+                                for i in range(3):
+                                    if ds[i].getValue() < 900.0:
+                                        avoidObstacleCounter = 90
+                            wheels[0].setVelocity(leftSpeed)
+                            wheels[1].setVelocity(rightSpeed)
+                            wheels[2].setVelocity(leftSpeed)
+                            wheels[3].setVelocity(rightSpeed)
+                           </pre><p>
+                          </code></pre>
+                        </section>
+            <section data-transition="slide" data-background-transition="convex">
+                        <iframe width="560" height="315" src="https://www.youtube.com/embed/vWNkJMrr3b0" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+                        </section>
+            <section data-transition="slide" data-background-transition="convex">
+                            <h2>Webots匯入EV3</h2>
+                            <small><p>將EV3STL黨匯入webots嘗試讓EV3避障</p></small>
+                            <p><img src="https://github.com/40823145/cd2021/blob/main/images/webots%20ev3.png?raw=true"" alt="" width="500" height="250"></p>
+                        </section>
+            <section data-transition="slide" data-background-transition="convex">
+                            <h2>問題</h2>
+                            <small><p>將EV3 STL黨匯入webots，全部的零件會變成整塊實體，所以將需要做動的輪胎部分先拆除，在webots中重建，但在webots中重建的輪胎顯示不出來，問題尚在解決當中</p></small>
+                            <p><img src="https://github.com/40823145/cd2021/blob/main/images/wheel%20error.png?raw=true"" alt="" width="500" height="250"></p>
+                        </section>
         </section>
 
         <!-- Example of nested vertical slides -->
         <section data-transition="slide" data-background-transition="convex">
-            <section data-transition="slide" data-background="#CC00CC" data-background-transition="convex">
+            <section data-transition="slide" data-background="#FFED97" data-background-transition="convex">
                 <h2>W2進度</h2>
             </section>
             <section data-transition="slide" data-background="#A500CC" data-background-transition="convex">
@@ -88,7 +153,7 @@
 
         <!-- Example of nested vertical slides -->
         <section data-transition="slide" data-background-transition="convex">
-            <section data-transition="slide" data-background="#CC00CC" data-background-transition="convex">
+            <section data-transition="slide" data-background="#FFFFAA" data-background-transition="convex">
                 <h2>W3進度</h2>
             </section>
             <section data-transition="slide" data-background="#A500CC" data-background-transition="convex">
@@ -121,11 +186,14 @@
                  <small><p>在經過零件簡化後，模擬上的問題也減少了，需要設定的參數也相對變少，最後成功讓小車可以移動</p></small>
                  <p><img src="https://github.com/40823108/cd2021/blob/main/images/EV3-11.JPG?raw=true" alt="" width="500" height="250"></p>
             </section>
+            <section data-transition="slide" data-background="#FAFAFA " data-background-transition="convex">
+                        <script src="https://embed.github.com/view/3d/40823108/cd2021/main/EV3-Ontology-1.0.stl"></script>
+                        </section>
         </section>
 
         <!-- Example of nested vertical slides -->
         <section data-transition="slide" data-background-transition="convex">
-            <section data-transition="slide" data-background="#CC00CC" data-background-transition="convex">
+            <section data-transition="slide" data-background="#FFED97" data-background-transition="convex">
                 <h2>W4進度</h2>
             </section>
             <section data-transition="slide" data-background="#A500CC" data-background-transition="convex">
