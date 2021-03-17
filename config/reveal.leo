@@ -193,11 +193,11 @@ vertical: body pane on the botton</t>
             progress: true,
             center: true,
             hash: true,
-
+            // Enable slide navigation via mouse wheel
+              mouseWheel: true,
             // Learn about plugins: https://revealjs.com/plugins/
             plugins: [ RevealZoom, RevealNotes, RevealSearch, RevealMarkdown, RevealHighlight ]
         });
-
     &lt;/script&gt;
 &lt;/body&gt;</t>
 <t tx="leo.20200818165438.1">&lt;head&gt;
