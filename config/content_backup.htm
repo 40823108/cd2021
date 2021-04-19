@@ -245,7 +245,21 @@ if __name__== '__main__':
 <p><strong>Step4:</strong></p>
 <p><strong>  </strong><em>You can start editing Reveal.</em></p>
 <p><em><img alt="" height="1440" src="/images/leo-12.JPG" width="2560"/></em></p>
-<h1>Midterm</h1>
+<h2>Synergy</h2>
+<p><span>協同設計與版次管理能夠有效提升團隊工作效率，降低內容互相覆蓋，最終造成無法辨識是誰更改內容的情況。</span></p>
+<p>因協作者的工作與內容更動皆在獨立分支清清楚楚，責任歸屬的也就一目了然。</p>
+<p>分支出來的設計，在本次目標不需要，或許未來的項目可以用上。可以避免掉「當初做過，但改掉了，這次又要重做」這種事情發生。</p>
+<p><img alt="" height="673" src="/images/Synergy-1.jpg" width="924"/></p>
+<p>組長在倉儲Setting-&gt;Manage access-&gt;Invite a collaborato邀請協作者</p>
+<p>組員在自己倉儲中Setting-&gt;Manage access-&gt;Invite a collaborato組長(組員不用互邀)</p>
+<pre class="brush:py;auto-links:false;toolbar:false" contenteditable="false">git clone --recurse-submodules https://github.com/a40823112/stage2-ag1.git stage2-ag1 (clone組長倉儲)
+cd stage2-ag1
+git remote add 40823108 https://github.com/40823108/stage2-ag1.git (add自己倉儲)
+git commit -m "test"
+git push 40823108 (先推送至自己倉儲)
+//如果沒問題再推送至組倉儲
+git push</pre>
+<p></p><h1>Midterm</h1>
 <h2>W1</h2>
 <p>The first stage of group collaborative internship:</p>
 <p>  The weekly group report must include html, pdf and Youtube videos:</p>
@@ -374,7 +388,8 @@ if (auxiliaryData[1]==2007) then
         Shape4 = 0
         Shape7 = 0
 end</pre>
-<p>因部分語法有誤待除錯</p><h2>W6</h2>
+<p>因部分語法有誤，日後待除錯。</p>
+<h2>W6</h2>
 <p>經過一週的時間，我們將程式進行了修改，但還是有錯誤，無法讓機構以上下左右鍵的方式進行控制。</p>
 <p>下方為模擬圖:</p>
 <p><img alt="" height="960" src="/images/EV3-13.jpg" width="1706"/></p>

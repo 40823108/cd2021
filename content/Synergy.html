@@ -133,22 +133,50 @@ img.add_border {
           </div>
           
         </header>
-    <div id="tipue_search_content">Leo Edit Blog << <a href='Leo Edit Blog.html'>Previous</a> <a href='Synergy.html'>Next</a> >> Synergy<br /><h1>Leo Edit Reveal</h1>
-<p><strong>Step1:</strong></p>
-<p><em>  Open leo </em>➜ Y:/tmp&gt;leo</p>
-<p><img alt="" height="513" src="./../images/leo-1.JPG" width="982"/></p>
-<p><strong>Step2:</strong></p>
-<p><em>  Click File <span>➜ Open-Outline</span></em></p>
-<p><em><span><img alt="" height="960" src="./../images/leo-8.jpg" width="1706"/></span></em></p>
-<p><strong>Step3:</strong></p>
-<p><em>  Y:\tmp\cd2021\config&gt;reveal.leo</em></p>
-<p><em><img alt="" height="712" src="./../images/leo-9.JPG" width="1186"/></em></p>
-<p><em><img alt="" height="715" src="./../images/leo-10.JPG" width="1188"/></em></p>
-<p><em><img alt="" height="717" src="./../images/leo-11.JPG" width="1185"/></em></p>
-<p><strong>Step4:</strong></p>
-<p><strong>  </strong><em>You can start editing Reveal.</em></p>
-<p><em><img alt="" height="1440" src="./../images/leo-12.JPG" width="2560"/></em></p>
-<br />Leo Edit Blog << <a href='Leo Edit Blog.html'>Previous</a> <a href='Synergy.html'>Next</a> >> Synergy</div>
+    <div id="tipue_search_content">Leo Edit Reveal << <a href='Leo Edit Reveal.html'>Previous</a> <a href='Midterm.html'>Next</a> >> Midterm<br /><h1>Synergy</h1>
+<p><span>協同設計與版次管理能夠有效提升團隊工作效率，降低內容互相覆蓋，最終造成無法辨識是誰更改內容的情況。</span></p>
+<p>因協作者的工作與內容更動皆在獨立分支清清楚楚，責任歸屬的也就一目了然。</p>
+<p>分支出來的設計，在本次目標不需要，或許未來的項目可以用上。可以避免掉「當初做過，但改掉了，這次又要重做」這種事情發生。</p>
+<p><img alt="" height="673" src="./../images/Synergy-1.jpg" width="924"/></p>
+<p>組長在倉儲Setting-&gt;Manage access-&gt;Invite a collaborato邀請協作者</p>
+<p>組員在自己倉儲中Setting-&gt;Manage access-&gt;Invite a collaborato組長(組員不用互邀)</p>
+<pre class="brush:py;auto-links:false;toolbar:false" contenteditable="false">git clone --recurse-submodules https://github.com/a40823112/stage2-ag1.git stage2-ag1 (clone組長倉儲)
+cd stage2-ag1
+git pull
+git remote add 40823108 https://github.com/40823108/stage2-ag1.git (add自己倉儲)
+git commit -m "test"
+git push 40823108 (先推送至自己倉儲)
+//如果沒問題再推送至組倉儲
+git push (推送至分組倉儲: https://github.com/a40823112/stage2-ag1.git)
+
+//***更改協同分組網站之前一定都要先git pull，如果直接更改會造成資料錯亂***</pre>
+<p><em>Step1:</em></p>
+<p>先建立一個空倉儲</p>
+<p><img alt="" height="960" src="./../images/Synergy-2.jpg" width="1706"/></p>
+<p><em>Step2:</em></p>
+<p><i>git clone --recurse-submodules <a href="https://github.com/a40823112/stage2-ag1.git">https://github.com/a40823112/stage2-ag1.git</a></i></p>
+<p><i><img alt="" height="513" src="./../images/Synergy-3.jpg" width="983"/></i></p>
+<p><em>Step3:</em></p>
+<p>點選倉儲中的Settings</p>
+<p><img alt="" height="960" src="./../images/Synergy-4.jpg" width="1706"/></p>
+<p><em>Step4:</em></p>
+<p>點選左方列表中的Manage access</p>
+<p><img alt="" height="960" src="./../images/Synergy-5.jpg" width="1706"/></p>
+<p><em>Step5:</em></p>
+<p>點選 Invite a collaboratot後邀請組長。</p>
+<p><img alt="" height="960" src="./../images/Synergy-6.jpg" width="1706"/></p>
+<p><em>Step6:</em></p>
+<p>創建Git Hub Page</p>
+<p><img alt="" height="960" src="./../images/Synergy-7.jpg" width="1706"/></p>
+<p><em>Step7:</em></p>
+<p>cd  stage2-ag1</p>
+<p>git pull</p>
+<p>git remote add 40823108 <a href="https://github.com/40823108/stage2-ag1.git">https://github.com/40823108/stage2-ag1.git</a> (add自己倉儲)</p>
+<p>git commit -m "test"</p>
+<p>git push 40823108 (先推送至自己倉儲)</p>
+<p>如果沒問題再推送至分組倉儲</p>
+<p>git push (推送至分組倉儲: https://github.com/a40823112/stage2-ag1.git)</p>
+<p>***更改協同分組網站之前一定都要先git pull，如果直接更改會造成資料錯亂***</p><br />Leo Edit Reveal << <a href='Leo Edit Reveal.html'>Previous</a> <a href='Midterm.html'>Next</a> >> Midterm</div>
         
     <!-- footer -->
       <div class="container">
