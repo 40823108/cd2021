@@ -292,7 +292,27 @@ git push (推送至分組倉儲: https://github.com/a40823112/stage2-ag1.git)
 <p></p>
 <h1>Coppeliasim basic</h1>
 <p><span>Coppeliasim裡有很多機械手臂、輪子之類的零件，可以提供我們搭建自己需要仿真的物體。</span><span>可以用lua函數或界面操作joint關節（即電機）運動，我們可以做正逆運動，軌跡規劃。</span><span>同時，它方便我們在其他地方調用api，支持跨平台運行，例如matlab、visual等，所以很適合用來驗證算法邏輯有沒有問題。</span></p>
-<p><img alt="" height="585" src="/images/coppeliasim-1.gif" width="1080"/></p><h1>Midterm</h1>
+<p><img alt="" height="585" src="/images/coppeliasim-1.gif" width="1080"/></p>
+<p></p>
+<h2>Import objects</h2>
+<p><em><strong>Step1:</strong></em></p>
+<p><span>  利用3D繪圖軟體(Autodesk Inventor Professional 2021),繪製所需物件。</span></p>
+<p><span><img alt="" height="960" src="/images/coppeliasim-2.jpg" width="1706"/></span></p>
+<p><em><strong>Step2:</strong></em></p>
+<p><span>  並將其匯出成STL檔案,<span>可先將座標位置定好再做匯出(Z軸向上為佳)<br/>以Inventor為例匯出STL檔案時須以另存成副本的方式,才能成功匯出STL檔案<br/>步驟為:開啟Inventor--&gt;開啟零件檔或組合檔--&gt;檔案--&gt;另存--&gt;將副本儲存成...</span></span></p>
+<p><span><img alt="" height="960" src="/images/coppeliasim-3.jpg" width="1706"/></span></p>
+<p><span>將所需之STL檔案儲存至專案資料夾中</span></p>
+<p><span><img alt="" height="960" src="/images/coppeliasim-4.jpg" width="1706"/></span></p>
+<p><em><strong>Step3:</strong></em></p>
+<p><span>  開啟coppeliasim匯入物件,步驟為: File--&gt;import--&gt;Mesh...</span></p>
+<p><span><img alt="" height="960" src="/images/coppeliasim-5.jpg" width="1706"/></span></p>
+<p><span>匯入物件設定視窗</span></p>
+<p><span><img alt="" height="960" src="/images/coppeliasim-6.jpg" width="1706"/></span></p>
+<p><span>下圖為匯入選項之翻譯</span></p>
+<p><span><img alt="" height="447" src="/images/coppeliasim-7.jpg" width="758"/></span></p>
+<p><em><strong>Step4:</strong></em></p>
+<p><span>  匯入方法與設定操作</span></p>
+<p><span><img alt="" height="1400" src="/images/coppeliasim-8.gif" width="2560"/></span></p><h1>Midterm</h1>
 <h2>W1</h2>
 <p>The first stage of group collaborative internship:</p>
 <p>  The weekly group report must include html, pdf and Youtube videos:</p>
@@ -626,5 +646,239 @@ end </pre>
 <p>成功使用方向鍵控制模型，下週將會加入視覺傳感器與力傳感器，讓模型在遇到物體時可以自動避開。</p>
 <p></p>
 <h2>W8</h2>
+<p>本週我們加入了力傳感器、視覺傳感器，讓模型在碰觸障礙物時，可以自行避開並選擇路徑上無障礙物之路線進行移動。</p>
+<p>下圖為模擬圖:</p>
+<p><img alt="" height="1400" src="/images/EV3-15.gif" width="2560"/></p>
+<p><strong>模型Lua:</strong></p>
+<pre class="brush:lua;auto-links:false;toolbar:false" contenteditable="false">function sysCall_init()
+    
+    
+end
+
+function sysCall_actuation()
+    
+end
+
+function sysCall_sensing()
+    
+end
+
+function sysCall_cleanup()
+    
+end
+
+
+
+function sysCall_afterDelete(inData)
+    for key,value in pairs(inData.objectHandles) do
+        print("Object with handle "..key.." was deleted")
+    end
+    
+end
+
+function sysCall_afterCreate(inData)
+    for key,value in pairs(inData.objectHandles) do
+        print("Object with handle "..value.." was created")
+    end
+end
+--]]
+function speedChange_callback(ui,id,newVal)
+    speed=minMaxSpeed[1]+(minMaxSpeed[2]-minMaxSpeed[1])*newVal/100
+end
+
+function sysCall_init()
+    
+    bubbleRobBase=sim.getObjectAssociatedWithScript(sim.handle_self) 
+    leftMotor=sim.getObjectHandle("bubbleRob_leftMotor") 
+    rightMotor=sim.getObjectHandle("bubbleRob_rightMotor") 
+    noseSensor=sim.getObjectHandle("bubbleRob_sensingNose") 
+    minMaxSpeed={120*math.pi/180,300*math.pi/180} 
+    backUntilTime=-1 
+   
+        xml = '&lt;ui title="'..sim.getObjectName(bubbleRobBase)..' speed" closeable="false" resizeable="false" activate="false"&gt;'..[[
+        &lt;hslider minimum="0" maximum="100" onchange="speedChange_callback" id="1"/&gt;
+        &lt;label text="" style="* {margin-left: 300px;}"/&gt;
+        &lt;/ui&gt;
+        ]]
+    ui=simUI.create(xml)
+    speed=(minMaxSpeed[1]+minMaxSpeed[2])*1
+    simUI.setSliderValue(ui,1,100*(speed-minMaxSpeed[1])/(minMaxSpeed[2]-minMaxSpeed[1]))
+end
+
+function sysCall_actuation()
+    result=sim.readProximitySensor(noseSensor) 
+    
+    if (result&gt;0) then backUntilTime=sim.getSimulationTime()+4 end 
+
+    if (backUntilTime&lt;sim.getSimulationTime()) then
+        
+        sim.setJointTargetVelocity(leftMotor,speed)
+        sim.setJointTargetVelocity(rightMotor,speed)
+    else
+        
+        sim.setJointTargetVelocity(leftMotor,-speed/5)
+        sim.setJointTargetVelocity(rightMotor,-speed/200)
+    end
+end
+
+function sysCall_cleanup()
+	simUI.destroy(ui)
+end</pre>
+<p><strong>路徑Lua:</strong></p>
+<pre class="brush:lua;auto-links:false;toolbar:false" contenteditable="false">require('graph_customization')</pre>
+<p><strong>力傳感器Lua:</strong></p>
+<pre class="brush:lua;auto-links:false;toolbar:false" contenteditable="false">function sysCall_trigger(inData)
+    -- callback function automatically added for backward compatibility
+    sim.breakForceSensor(inData.handle)
+end
+
+function sysCall_trigger(inData)
+    -- callback function automatically added for backward compatibility
+    sim.breakForceSensor(inData.handle)
+end
+
+function sysCall_trigger(inData)
+    -- callback function automatically added for backward compatibility
+    sim.breakForceSensor(inData.handle)
+end
+
+function sysCall_trigger(inData)
+    -- callback function automatically added for backward compatibility
+    sim.breakForceSensor(inData.handle)
+end
+
+function sysCall_trigger(inData)
+    -- callback function automatically added for backward compatibility
+    sim.breakForceSensor(inData.handle)
+end
+
+function sysCall_trigger(inData)
+    -- callback function automatically added for backward compatibility
+    sim.breakForceSensor(inData.handle)
+end
+
+function sysCall_trigger(inData)
+    -- callback function automatically added for backward compatibility
+    sim.breakForceSensor(inData.handle)
+end
+
+function sysCall_trigger(inData)
+    -- callback function automatically added for backward compatibility
+    sim.breakForceSensor(inData.handle)
+end
+
+function sysCall_trigger(inData)
+    -- callback function automatically added for backward compatibility
+    sim.breakForceSensor(inData.handle)
+end
+
+function sysCall_trigger(inData)
+    -- callback function automatically added for backward compatibility
+    sim.breakForceSensor(inData.handle)
+end
+
+function sysCall_trigger(inData)
+    -- callback function automatically added for backward compatibility
+    sim.breakForceSensor(inData.handle)
+end
+
+function sysCall_trigger(inData)
+    -- callback function automatically added for backward compatibility
+    sim.breakForceSensor(inData.handle)
+end
+
+function sysCall_trigger(inData)
+    -- callback function automatically added for backward compatibility
+    sim.breakForceSensor(inData.handle)
+end
+
+function sysCall_trigger(inData)
+    -- callback function automatically added for backward compatibility
+    sim.breakForceSensor(inData.handle)
+end
+
+function sysCall_trigger(inData)
+    -- callback function automatically added for backward compatibility
+    sim.breakForceSensor(inData.handle)
+end
+
+function sysCall_trigger(inData)
+    -- callback function automatically added for backward compatibility
+    sim.breakForceSensor(inData.handle)
+end
+
+function sysCall_trigger(inData)
+    -- callback function automatically added for backward compatibility
+    sim.breakForceSensor(inData.handle)
+end
+
+function sysCall_trigger(inData)
+    -- callback function automatically added for backward compatibility
+    sim.breakForceSensor(inData.handle)
+end
+
+function sysCall_trigger(inData)
+    -- callback function automatically added for backward compatibility
+    sim.breakForceSensor(inData.handle)
+end
+
+function sysCall_trigger(inData)
+    -- callback function automatically added for backward compatibility
+    sim.breakForceSensor(inData.handle)
+end
+
+function sysCall_trigger(inData)
+    -- callback function automatically added for backward compatibility
+    sim.breakForceSensor(inData.handle)
+end
+
+function sysCall_trigger(inData)
+    -- callback function automatically added for backward compatibility
+    sim.breakForceSensor(inData.handle)
+end
+
+function sysCall_trigger(inData)
+    -- callback function automatically added for backward compatibility
+    sim.breakForceSensor(inData.handle)
+end
+
+function sysCall_trigger(inData)
+    -- callback function automatically added for backward compatibility
+    sim.breakForceSensor(inData.handle)
+end
+
+function sysCall_trigger(inData)
+    -- callback function automatically added for backward compatibility
+    sim.breakForceSensor(inData.handle)
+end
+
+function sysCall_trigger(inData)
+    -- callback function automatically added for backward compatibility
+    sim.breakForceSensor(inData.handle)
+end
+
+function sysCall_init()
+end
+
+function sysCall_trigger(inData)
+    -- callback function automatically added for backward compatibility
+    sim.breakForceSensor(inData.handle)
+end</pre>
+<p><strong>視覺傳感器Lua:</strong></p>
+<pre class="brush:lua;auto-links:false;toolbar:false" contenteditable="false">function sysCall_init()
+end
+
+function sysCall_vision(inData)
+    -- callback function automatically added for backward compatibility
+    -- (vision sensor have no filters anymore, but rather a callback function where image processing can be performed)
+    local retVal={}
+    retVal.trigger=false
+    retVal.packedPackets={}
+    simVision.sensorImgToWorkImg(inData.handle)
+    simVision.edgeDetectionOnWorkImg(inData.handle,0.200000)
+    simVision.workImgToSensorImg(inData.handle,false)
+    return retVal
+end
+</pre>
 <p></p>
 <h2>W9</h2>
