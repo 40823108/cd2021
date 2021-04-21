@@ -133,96 +133,15 @@ img.add_border {
           </div>
           
         </header>
-    <div id="tipue_search_content">W6 << <a href='W6.html'>Previous</a> <a href='W8.html'>Next</a> >> W8<br /><h1>W7</h1>
-<p>經過前兩次的修改，最終我們成功完模擬，可以使用鍵盤的方向鍵對模型進行控制。</p>
-<p>下圖為模擬圖</p>
-<p><img alt="" height="1040" src="./../images/EV3-14.gif" width="1920"/></p>
-<p>第三次Lua程式(成功)</p>
-<pre class="brush:lua;auto-links:false;toolbar:false" contenteditable="false">function sysCall_init() 
-    left_front_handle= sim.getObjectHandle('left_m')
-    left_back_handle= sim.getObjectHandle('left_m')
-    right_back_handle= sim.getObjectHandle('right_m')
-    right_front_handle= sim.getObjectHandle('right_m')
-    MaxVel=2
-    leftvelocity=0
-    rightvelocity=0
-    dVel=0.5;
-    --sim.setJointTargetVelocity(left_front_handle,leftvelocity)
-    sim.setJointTargetVelocity(left_back_handle,leftvelocity)
-    sim.setJointTargetVelocity(right_back_handle,rightvelocity)
-    --sim.setJointTargetVelocity(right_front_handle,rightvelocity)
-end
-
-function sysCall_actuation() 
-    message,auxiliaryData=sim.getSimulatorMessage()
-    while message~=-1 do
-        if (message==sim.message_keypress) then
-            if (auxiliaryData[1]==32) then
-                -- right key
-                leftvelocity=0
-                rightvelocity=0
-                sim.setJointForce(left_front_handle, 0)
-                sim.setJointForce(left_back_handle, 0)
-                sim.setJointForce(right_back_handle, 0)
-                sim.setJointForce(right_front_handle, 0)
-                break
-            else
-                --sim.setJointForce(left_front_handle, 10000)
-                sim.setJointForce(left_back_handle, 10000)
-                sim.setJointForce(right_back_handle, 10000)
-                --sim.setJointForce(right_front_handle, 10000)
-            end
-            if (auxiliaryData[1]==2007) then
-                -- up key
-                leftvelocity=(leftvelocity+rightvelocity)/2
-                rightvelocity=leftvelocity
-                leftvelocity=leftvelocity+dVel
-                rightvelocity=rightvelocity+dVel
-            end
-            if (auxiliaryData[1]==2008) then
-                -- down key
-                leftvelocity=(leftvelocity+rightvelocity)/2
-                rightvelocity=leftvelocity
-                leftvelocity=leftvelocity-dVel
-                rightvelocity=rightvelocity-dVel
-            end
-            if (auxiliaryData[1]==2009) then
-                -- left key
-                leftvelocity=leftvelocity-dVel
-                rightvelocity=rightvelocity+dVel
-            end
-            if (auxiliaryData[1]==2010) then
-                -- right key
-                leftvelocity=leftvelocity+dVel
-                rightvelocity=rightvelocity-dVel
-            end
-        end
-        message,auxiliaryData=sim.getSimulatorMessage()
-    end
-    
-    if leftvelocity&gt;MaxVel then
-        leftvelocity=MaxVel
-    end
-    if leftvelocity&lt;-MaxVel then
-        leftvelocity=-MaxVel
-    end
-    
-    if rightvelocity&gt;MaxVel then
-                rightvelocity=MaxVel
-    end
-    if rightvelocity&lt;-MaxVel then
-                rightvelocity=-MaxVel
-    end
-    
-    --sim.setJointTargetVelocity(left_front_handle,leftvelocity)
-    sim.setJointTargetVelocity(left_back_handle,leftvelocity)
-    sim.setJointTargetVelocity(right_back_handle,rightvelocity)
-    --sim.setJointTargetVelocity(right_front_handle,rightvelocity)
-    
-end </pre>
-<p>成功使用方向鍵控制模型，下週將會加入視覺傳感器與力傳感器，讓模型在遇到物體時可以自動避開。</p>
-<p></p>
-<br />W6 << <a href='W6.html'>Previous</a> <a href='W8.html'>Next</a> >> W8</div>
+    <div id="tipue_search_content">Divide object << <a href='Divide object.html'>Previous</a> <a href='Midterm.html'>Next</a> >> Midterm<br /><h1>Appearance setting</h1>
+<p>1.可使用內部彈出視窗(Scene Object Properties)修改每個物件的顏色,需先選中需染色之物件在點選左方工具列中放大鏡的圖示即可使用內部彈出視窗</p>
+<p>2.修改顏色步驟為:  選中之物件--&gt;<span>Scene Object Properties--&gt;shape--&gt;Adjust color--&gt;Ambient/diffuse component--&gt;RGB  or  HSL--&gt;Apply to selection</span></p>
+<p><span>下圖為修改顏色視窗:</span></p>
+<p><span><img alt="" height="483" src="./../images/coppeliasim-16.jpg" width="887"/></span></p>
+<p><span>銳化屬性對話框:</span></p>
+<p><span><img alt="" height="566" src="./../images/coppeliasim-17.jpg" width="805"/></span></p>
+<p><span>一般屬性對話框:</span></p>
+<p><span><img alt="" height="631" src="./../images/coppeliasim-18.jpg" width="970"/></span></p><br />Divide object << <a href='Divide object.html'>Previous</a> <a href='Midterm.html'>Next</a> >> Midterm</div>
         
     <!-- footer -->
       <div class="container">
