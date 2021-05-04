@@ -133,96 +133,17 @@ img.add_border {
           </div>
           
         </header>
-    <div id="tipue_search_content">W6 << <a href='W6.html'>Previous</a> <a href='W8.html'>Next</a> >> W8<br /><h1>W7</h1>
-<p>經過前兩次的修改，最終我們成功完模擬，可以使用鍵盤的方向鍵對模型進行控制。</p>
-<p>下圖為模擬圖</p>
-<p><img alt="" height="1040" src="./../images/EV3-14.gif" width="1920"/></p>
-<p>第三次Lua程式(成功)</p>
-<pre class="brush:lua;auto-links:false;toolbar:false" contenteditable="false">function sysCall_init() 
-    left_front_handle= sim.getObjectHandle('left_m')
-    left_back_handle= sim.getObjectHandle('left_m')
-    right_back_handle= sim.getObjectHandle('right_m')
-    right_front_handle= sim.getObjectHandle('right_m')
-    MaxVel=2
-    leftvelocity=0
-    rightvelocity=0
-    dVel=0.5;
-    --sim.setJointTargetVelocity(left_front_handle,leftvelocity)
-    sim.setJointTargetVelocity(left_back_handle,leftvelocity)
-    sim.setJointTargetVelocity(right_back_handle,rightvelocity)
-    --sim.setJointTargetVelocity(right_front_handle,rightvelocity)
-end
-
-function sysCall_actuation() 
-    message,auxiliaryData=sim.getSimulatorMessage()
-    while message~=-1 do
-        if (message==sim.message_keypress) then
-            if (auxiliaryData[1]==32) then
-                -- right key
-                leftvelocity=0
-                rightvelocity=0
-                sim.setJointForce(left_front_handle, 0)
-                sim.setJointForce(left_back_handle, 0)
-                sim.setJointForce(right_back_handle, 0)
-                sim.setJointForce(right_front_handle, 0)
-                break
-            else
-                --sim.setJointForce(left_front_handle, 10000)
-                sim.setJointForce(left_back_handle, 10000)
-                sim.setJointForce(right_back_handle, 10000)
-                --sim.setJointForce(right_front_handle, 10000)
-            end
-            if (auxiliaryData[1]==2007) then
-                -- up key
-                leftvelocity=(leftvelocity+rightvelocity)/2
-                rightvelocity=leftvelocity
-                leftvelocity=leftvelocity+dVel
-                rightvelocity=rightvelocity+dVel
-            end
-            if (auxiliaryData[1]==2008) then
-                -- down key
-                leftvelocity=(leftvelocity+rightvelocity)/2
-                rightvelocity=leftvelocity
-                leftvelocity=leftvelocity-dVel
-                rightvelocity=rightvelocity-dVel
-            end
-            if (auxiliaryData[1]==2009) then
-                -- left key
-                leftvelocity=leftvelocity-dVel
-                rightvelocity=rightvelocity+dVel
-            end
-            if (auxiliaryData[1]==2010) then
-                -- right key
-                leftvelocity=leftvelocity+dVel
-                rightvelocity=rightvelocity-dVel
-            end
-        end
-        message,auxiliaryData=sim.getSimulatorMessage()
-    end
-    
-    if leftvelocity&gt;MaxVel then
-        leftvelocity=MaxVel
-    end
-    if leftvelocity&lt;-MaxVel then
-        leftvelocity=-MaxVel
-    end
-    
-    if rightvelocity&gt;MaxVel then
-                rightvelocity=MaxVel
-    end
-    if rightvelocity&lt;-MaxVel then
-                rightvelocity=-MaxVel
-    end
-    
-    --sim.setJointTargetVelocity(left_front_handle,leftvelocity)
-    sim.setJointTargetVelocity(left_back_handle,leftvelocity)
-    sim.setJointTargetVelocity(right_back_handle,rightvelocity)
-    --sim.setJointTargetVelocity(right_front_handle,rightvelocity)
-    
-end </pre>
-<p>成功使用方向鍵控制模型，下週將會加入視覺傳感器與力傳感器，讓模型在遇到物體時可以自動避開。</p>
-<p></p>
-<br />W6 << <a href='W6.html'>Previous</a> <a href='W8.html'>Next</a> >> W8</div>
+    <div id="tipue_search_content">Appearance setting << <a href='Appearance setting.html'>Previous</a> <a href='Midterm.html'>Next</a> >> Midterm<br /><h1>Joint settings</h1>
+<p>1.為了讓物件可以旋轉,所以需要加入joint.</p>
+<p>2.點選左上的 Add--&gt;joint--&gt;Revolute 這樣就能叫出一個圓柱狀的軸，並生成在座標 0.0.0. 上。</p>
+<p>3.加入joint步驟為:  空白處滑鼠右鍵--&gt;<span>Add--&gt;joint--&gt;Revolute.</span></p>
+<p>4.可使用物件彈出視窗修改joint之長度與直徑,還有一班屬性與動態屬性。</p>
+<p>5.新增完joint後,因物件與其無關聯所以須使用上方工具欄中Object/ltem Translation/Position--&gt;<span>Position(移動)指令,使物件與馬達位置相同後,再使用Object/ltem Translation/Position--&gt;<span>Position(旋轉)指令使馬達與物件軸向相同。</span></span></p>
+<p><span><span>下圖為Joint屬性對話框:</span></span></p>
+<p><span><img alt="" height="520" src="./../images/coppeliasim-19.jpg" width="868"/></span></p>
+<p><span>下圖為組裝測試圖:</span></p>
+<p><span><img alt="" height="960" src="./../images/EV3-12.jpg" width="1706"/></span></p>
+<p><span></span></p><br />Appearance setting << <a href='Appearance setting.html'>Previous</a> <a href='Midterm.html'>Next</a> >> Midterm</div>
         
     <!-- footer -->
       <div class="container">
