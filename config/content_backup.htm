@@ -361,7 +361,13 @@ git push (推送至分組倉儲: https://github.com/a40823112/stage2-ag1.git)
 <p>1.添加<span>Proximity sensor步驟為:Menu bar --&gt; Add --&gt; Proximity sensor --&gt; Cone type</span></p>
 <p>2.因匯入方向不同所以要使用移動指令與旋轉指令將接近傳感器調整至所需位置。</p>
 <p>3.修改<span>Proximity sensor(接近傳感器)的參數。</span></p>
-<p>4.最後再將<span>Proximity sensor(接近傳感器)放置到所需之物件下編排樹狀圖即可。</span></p><h1>Midterm</h1>
+<p>4.最後再將<span>Proximity sensor(接近傳感器)放置到所需之物件下編排樹狀圖即可。</span></p>
+<p><span>下圖為添加畫面:</span></p>
+<p><span><img caption="false" height="960" src="/images/coppeliasim-21.jpg" width="1706"/></span></p>
+<p><span>下圖為修改參數屬性對話框:</span></p>
+<p><span><img alt="" height="960" src="/images/coppeliasim-22.jpg" width="1706"/></span></p>
+<p><span>下圖為排列樹狀圖示意圖:</span></p>
+<p><span><img alt="" height="367" src="/images/coppeliasim-23.jpg" width="304"/></span></p><h1>Midterm</h1>
 <p>以下頁籤為開學第一週(W1)~第九週(W9)之內容</p>
 <h2>W1</h2>
 <p>The first stage of group collaborative internship:</p>
@@ -955,3 +961,70 @@ for i in range(len(data)):
 <h4>列出各分組倉儲, 分組網站與學員倉儲及學員網站連結:</h4>
 <p>(待補)</p>
 <h2>W11</h2>
+<p>執行Task2，<span>stage1 與 stage2 所完成的 coppeliasim 場景, 採 Python remote API 進行操控, 並將過程拍成影片。</span></p>
+<p><span>CoppeliaSim 使用 <a href="http://a.kmol.info:88/CoppeliaSimEdu_4.2.0.7z">4.2.0 版</a><span>.</span></span></p>
+<p><span><span> CoppeliaSim 場景進行操控:</span></span></p>
+<p>首先將下方紅框處的3個檔案與要執行的.ttt檔案放在同一個資寮夾。</p>
+<p><img alt="" height="649" src="/images/coppeliasim-24.JPG" width="1171"/></p>
+<p>接下來將.Py檔放入(Untitled)-SciTE，並修改第一行為: sim as vrep，再將下方馬達換成對應名稱</p>
+<p><img alt="" height="729" src="/images/coppeliasim-25.JPG" width="562"/></p>
+<p>接下來將逞景整體加入腳本</p>
+<p><img alt="" height="1080" src="/images/coppeliasim-26.JPG" width="1920"/></p>
+<p>第一個腳本</p>
+<p><img alt="" height="830" src="/images/coppeliasim-27.JPG" width="1003"/></p>
+<pre class="brush:lua;auto-links:false;toolbar:false" contenteditable="false">simRemoteApi.start(19999)</pre>
+<p>第二個腳本</p>
+<p><img alt="" height="1080" src="/images/coppeliasim-28.JPG" width="1920"/></p>
+<pre class="brush:lua;auto-links:false;toolbar:false" contenteditable="false">threadFunction=function()
+	-- Put your thread code here (initialization and clean-up code should not be in here)
+
+	
+	-- Some EXTERNAL commands (e.g. socket commands provided by Lua libraries)
+	-- might appear as blocking to the simulator. In that case, you can define
+	-- a non-blocking section as following example shows:
+	--
+	-- sim.setThreadIsFree(true) -- Start of the non-blocking section
+	--
+	-- Following 2 lines are meant as an example of EXTERNAL blocking commands:
+	-- http = require("socket.http")
+	-- print(http.request("http://www.google.com"))
+	--
+	-- sim.setThreadIsFree(false) -- End of the non-blocking section
+	--
+	-- While in a non-blocking section, try to avoid calling sim-functions. Also
+	-- never forget to close the blocking section, otherwise V-REP will hang.
+	-- Make sure you read the information related to the sim.setThreadIsFree
+	-- API function in V-REP's documentation.
+
+
+	-- If you wish to synchronize a threaded loop with each simulation pass,
+	-- set the thread switch timing in the initialization phase of this script
+	-- to the maximum (200), and manually switch thread here with the
+	-- sim.switchThread() command. 
+	-- ( sim.switchThread() will suspend this script's execution until next
+	-- simulation pass, i.e. until the simulation time has changed )
+	--
+	-- Following example illustrates this:
+	-- 
+	-- while true do
+	--     local p=sim.getObjectPosition(objHandle,-1)
+	--     p[1]=p[1]+0.001
+	--     sim.setObjectPosition(objHandle,-1,p)
+	--     sim.switchThread()
+	-- end
+end
+
+-- Put some initialization code here:
+sim.setThreadSwitchTiming(2) -- Default timing for automatic thread switching
+
+-- Here we execute the regular thread code:
+res,err=xpcall(threadFunction,function(err) return debug.traceback(err) end)
+if not res then
+	sim.addStatusbarMessage('Lua runtime error: '..err)
+end
+
+-- Put some clean-up code here:
+simRemoteApi.start(19999)</pre>
+<p>成功執行畫面</p>
+<p><img alt="" height="1080" src="/images/coppeliasim-29.JPG" width="1920"/></p>
+<p></p>
