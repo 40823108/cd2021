@@ -367,7 +367,8 @@ git push (推送至分組倉儲: https://github.com/a40823112/stage2-ag1.git)
 <p><span>下圖為修改參數屬性對話框:</span></p>
 <p><span><img alt="" height="960" src="/images/coppeliasim-22.jpg" width="1706"/></span></p>
 <p><span>下圖為排列樹狀圖示意圖:</span></p>
-<p><span><img alt="" height="367" src="/images/coppeliasim-23.jpg" width="304"/></span></p><h1>Midterm</h1>
+<p><span><img alt="" height="367" src="/images/coppeliasim-23.jpg" width="304"/></span></p>
+<h1>Midterm</h1>
 <p>以下頁籤為開學第一週(W1)~第九週(W9)之內容</p>
 <h2>W1</h2>
 <p>The first stage of group collaborative internship:</p>
@@ -959,7 +960,8 @@ for i in range(len(data)):
     group = data[i].rstrip("\n").split("\t")
     print(待補)</pre>
 <h4>列出各分組倉儲, 分組網站與學員倉儲及學員網站連結:</h4>
-<p>(待補)</p><h2>W11-task2</h2>
+<p>(待補)</p>
+<h2>W11-task2</h2>
 <p>執行Task2，<span>stage1 與 stage2 所完成的 coppeliasim 場景, 採 Python remote API 進行操控, 並將過程拍成影片。</span></p>
 <p><span>CoppeliaSim 使用 <a href="http://a.kmol.info:88/CoppeliaSimEdu_4.2.0.7z">4.2.0 版</a><span>.</span></span></p>
 <p><span><span>將stage1 與 stage2 所完成的coppeliasim場景, 使用 Python remote API 進行操控:</span></span></p>
@@ -1054,4 +1056,35 @@ if errorCode == -1:
 errorCode=vrep.simxSetJointTargetVelocity(clientID,left_motor_handle,0, vrep.simx_opmode_oneshot_wait)
 errorCode=vrep.simxSetJointTargetVelocity(clientID,right_motor_handle,2, vrep.simx_opmode_oneshot_wait)</pre>
 <p></p>
-<p></p>
+<h2>W12-task3</h2>
+<p>下載 <a href="https://obsproject.com/">OBS</a> 並使用 <a href="https://www.youtube.com/channel/UCd3WMYoS7LQ5-Yh1u7gXbpA">Youtube</a> 進行直播，<span>每週各組按照組員順序, 於每堂課程時段, 輪流由 2-3 名同學開啟，<br/>因帳號第一次直播需要24小時後才能開播，須臾下次上課前準備好此功能。</span></p>
+<p><span>下圖為鎖定頁面:</span></p>
+<p><span><img alt="" height="597" src="/images/obs-1.png" width="1024"/></span></p>
+<p><span>下載 <a href="https://obsproject.com/">OBS</a> ，OBS軟體在擷取顯示器時是使用內顯，現在大部分筆電都有獨顯，所以在安裝玩OBS要擷取顯示器時會出現無法擷取顯示器的問題。</span></p>
+<p><span>以下講解如何解決顯示器無法擷取問題:</span></p>
+<p><span>Step1:</span></p>
+<p>  開啟顯示設定</p>
+<p><img caption="false" height="1080" src="/images/obs-2.png" width="1920"/></p>
+<p>Step2:</p>
+<p>  點選下方圖形設定</p>
+<p><img alt="" height="1402" src="/images/obs-3.PNG" width="1016"/></p>
+<p>Step3:</p>
+<p>  點選瀏覽</p>
+<p><img caption="false" height="1080" src="/images/obs-4.png" width="1920"/></p>
+<p>Step4:</p>
+<p>  選取obs64.exe，因使用者不同路徑有所變化，個人之路徑為:</p>
+<p><img alt="" height="716" src="/images/obs-5.png" width="1188"/></p>
+<p>Step5:</p>
+<p>  選完應用程式後，點選程式欄位下方選項的位置</p>
+<p><img caption="false" height="1080" src="/images/obs-6.png" width="1920"/></p>
+<p>Step6:</p>
+<p>  這時圖形偏好設定對話框會跳出此時點選省電模式並按下儲存，OBS就能擷取到顯示器。</p>
+<p><span>圖形偏好設定對話框有三個選項:</span></p>
+<p>1.讓Windoes決定: 預設使用獨顯</p>
+<p>2.省電: 下方有標記是內顯</p>
+<p>3.高效能: <span>下方有標記是獨顯</span></p>
+<p>因<span>OBS軟體在擷取顯示器時是使用內顯，所以選取省電模式</span></p>
+<p><span><img alt="" height="320" src="/images/obs-7.png" width="413"/></span></p>
+<p><span>Step7:</span></p>
+<p>  成功擷取</p>
+<p><img alt="" height="759" src="/images/obs-8.PNG" width="1081"/></p>
