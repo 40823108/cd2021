@@ -944,7 +944,7 @@ end
 <p><span></span></p>
 <h1>Final</h1>
 <p><span>以下頁籤為開學第十週(W10)~第十八週(W18)之內容</span></p>
-<h2>W10</h2>
+<h2>W10-task1</h2>
 <p>利用國立虎尾科技科技大學機械設計工程系cd2021下的task1進行作業。</p>
 <p>讀取 stage3_2a.txt, 建立 Stage3 的分組倉儲, 分組網頁, 以及各組員倉儲及網頁連結.</p>
 <p>已知<span> </span><a href="http://mde.tw/cd2021/downloads/stage3/stage3_2a.txt">stage3_2a.txt</a><span>內容, 以及初步資料讀取程式:</span><span> </span></p>
@@ -959,10 +959,11 @@ for i in range(len(data)):
     group = data[i].rstrip("\n").split("\t")
     print(待補)</pre>
 <h4>列出各分組倉儲, 分組網站與學員倉儲及學員網站連結:</h4>
-<p>(待補)</p>
-<h2>W11</h2>
+<p>(待補)</p><h2>W11-task2</h2>
 <p>執行Task2，<span>stage1 與 stage2 所完成的 coppeliasim 場景, 採 Python remote API 進行操控, 並將過程拍成影片。</span></p>
 <p><span>CoppeliaSim 使用 <a href="http://a.kmol.info:88/CoppeliaSimEdu_4.2.0.7z">4.2.0 版</a><span>.</span></span></p>
+<p><span><span>將stage1 與 stage2 所完成的coppeliasim場景, 使用 Python remote API 進行操控</span></span></p>
+<p><span><span><img alt="" height="869" src="/images/coppeliasim-30.gif" width="1674"/></span></span></p>
 <p><span><span> CoppeliaSim 場景進行操控:</span></span></p>
 <p>首先將下方紅框處的3個檔案與要執行的.ttt檔案放在同一個資寮夾。</p>
 <p><img alt="" height="649" src="/images/coppeliasim-24.JPG" width="1171"/></p>
@@ -1027,4 +1028,30 @@ end
 simRemoteApi.start(19999)</pre>
 <p>成功執行畫面</p>
 <p><img alt="" height="1080" src="/images/coppeliasim-29.JPG" width="1920"/></p>
+<pre class="brush:py;auto-links:false;toolbar:false" contenteditable="false">import sim as vrep
+import sys
+# child threaded script: 
+#simExtRemoteApiStart(19999)
+ 
+vrep.simxFinish(-1)
+ 
+clientID = vrep.simxStart('127.0.0.1', 19999, True, True, 5000, 5)
+ 
+if clientID!= -1:
+    print("Connected to remote server")
+else:
+    print('Connection not successful')
+    sys.exit('Could not connect')
+ 
+errorCode,left_motor_handle=vrep.simxGetObjectHandle(clientID,'left_m',vrep.simx_opmode_oneshot_wait)
+ 
+errorCode,right_motor_handle=vrep.simxGetObjectHandle(clientID,'right_m',vrep.simx_opmode_oneshot_wait)
+ 
+if errorCode == -1:
+    print('Can not find left or right motor')
+    sys.exit()
+ 
+errorCode=vrep.simxSetJointTargetVelocity(clientID,left_motor_handle,0, vrep.simx_opmode_oneshot_wait)
+errorCode=vrep.simxSetJointTargetVelocity(clientID,right_motor_handle,2, vrep.simx_opmode_oneshot_wait)</pre>
+<p></p>
 <p></p>
