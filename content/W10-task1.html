@@ -174,6 +174,7 @@ for i in range(len(data)):
             continue</pre>
 <p><span>version2程式中字串 </span></p>
 <pre class="brush:py;auto-links:false;toolbar:false" contenteditable="false">with open("stage3_2a.txt") as fh:</pre>
+<p><span>字串為:</span></p>
 <p>開啟檔案 stage3_2a</p>
 <pre class="brush:py;auto-links:false;toolbar:false" contenteditable="false">data = fh.readlines()</pre>
 <p>字串為:</p>
@@ -182,13 +183,28 @@ for i in range(len(data)):
 <pre class="brush:py;auto-links:false;toolbar:false" contenteditable="false">data = [a.replace('4823122','40823122') for a in data]</pre>
 <p><span>字串為:</span></p>
 <p><span>把字符串中的old（舊字符串） 替換成new(新字符串)，如果指定第三個參數max，則替換不超過max 次，等於把 "4823112" 換成 "40823112"</span></p>
-<p><span><code class="py plain">data </code><code class="py keyword">=</code><span> </span><code class="py plain">[c.replace(</code><code class="py string">'\t\t\t\t'</code><code class="py plain">,'') </code><code class="py keyword">for</code><span> </span><code class="py plain">c </code><code class="py keyword">in</code><span> </span><code class="py plain">data]</code></span></p>
-<p><span><code class="py plain">字串為:</code></span></p>
+<pre class="brush:py;auto-links:false;toolbar:false" contenteditable="false">data = [c.replace('\t\t\t\t','') for c in data]</pre>
+<p>字串為:</p>
 <p><code class="py plain">(</code><code class="py string">'\t\t\t\t'</code><code class="py plain">,'')將排序出來的結果作空格</code></p>
-<pre class="brush:py;auto-links:false;toolbar:false" contenteditable="false">for i in range(len(data)):</pre>
+<pre class="brush:py;auto-links:false;toolbar:false" contenteditable="false">for i in range(len(data)):
+    group = data[i].rstrip("\n").split("\t")</pre>
 <p><span>字串為:</span></p>
 <p><span>分析檔案範圍有六組，進行迴圈，變數為i</span></p>
-<h4>列出各分組倉儲, 分組網站與學員倉儲及學員網站連結:</h4>
+<p><span>將data列表中第i項，去除元素\n(換行)利用\t(空格)分割變成元素(逗號自動補上)</span></p>
+<pre class="brush:py;auto-links:false;toolbar:false" contenteditable="false"> print('&lt;p&gt;'+group[0]+'|&lt;a href="https://'+group[1]+'.github.io/stage3-ag'+group[0][9]+'"&gt;網站&lt;/a&gt;|&lt;a href="https://github.com/'+group[2]+'/stage3-ag'+group[0][9]+'"&gt;倉儲&lt;/a&gt;&lt;/p&gt;')</pre>
+<p><span>字串為:</span></p>
+<p><span>group[0][9]=第0個第9位</span></p>
+<p><span>用print依序索引group list 中的元素，放入html格式，依序列出</span></p>
+<pre class="brush:py;auto-links:false;toolbar:false" contenteditable="false">for j in range(2,18,2):</pre>
+<p><span>字串為:</span></p>
+<p>從2開始每次跳2格最多跳到16不可超過18</p>
+<pre class="brush:py;auto-links:false;toolbar:false" contenteditable="false">try:
+            print('&lt;p&gt;'+group[j]+'|Website:'+'&lt;a href="https://'+group[j]+'.github.io/cd2021'+'"&gt;'+group[j]+'&lt;/a&gt;'+'|Repository:'+'&lt;a href="https://github.com/'+group[j]+'/cd2021'+'"&gt;'+group[j]+'&lt;/a&gt;&lt;/p&gt;')
+        except:
+            continue</pre>
+<p>用print依序索引group list 中的元素，放入html格式，依序列出來</p>
+<p>  差別在於這行取組員的但因為有一組只有6人超出範圍所以一定會error。</p>
+<p>列出各分組倉儲, 分組網站與學員倉儲及學員網站連結:</p>
 <p>(待補)</p><br />Final << <a href='Final.html'>Previous</a> <a href='W11-task2.html'>Next</a> >> W11-task2</div>
         
     <!-- footer -->
