@@ -948,20 +948,60 @@ end
 <h2>W10-task1</h2>
 <p>利用國立虎尾科技科技大學機械設計工程系cd2021下的task1進行作業。</p>
 <p>讀取 stage3_2a.txt, 建立 Stage3 的分組倉儲, 分組網頁, 以及各組員倉儲及網頁連結.</p>
-<p>已知<span> </span><a href="http://mde.tw/cd2021/downloads/stage3/stage3_2a.txt">stage3_2a.txt</a><span>內容, 以及初步資料讀取程式:</span><span> </span></p>
-<pre class="brush:py;auto-links:false;toolbar:false" contenteditable="false"># open file, default is read mode, since txt content no chinese char
-# no encoding = "UTF-8" is needed
+<p>已知<span> </span><a href="http://mde.tw/cd2021/downloads/stage3/stage3_2a.txt">stage3_2a.txt</a><span>內容, 以及初步資料讀取程式:</span></p>
+<p><span><strong>程式碼(version1):</strong> </span></p>
+<pre class="brush:py;auto-links:false;toolbar:false" contenteditable="false"># open file, default is read mode, since txt content no chinese char4
+# no encoding = "UTF- 08" is needed
 with open("stage3_2a.txt") as fh:
-    # readlines will read into the whole line and put into list format
-    # has \n at the end of each line
+    # readlines will read into the whole line and put into list format 23
+    # has \n at the end of each line 13
     data = fh.readlines()
-#print(len(data))
+#print(len(data))1
 for i in range(len(data)):
     group = data[i].rstrip("\n").split("\t")
-    print(待補)</pre>
+    print('&lt;p&gt;'+group[0]+'|&lt;a href="https://'+group[1]+'.github.io/stage3-ag'+group[0][9]+'"&gt;網站&lt;/a&gt;|&lt;a href="https://github.com/'+group[2]+'/stage3-ag'+group[0][9]+'"&gt;倉儲&lt;/a&gt;&lt;/p&gt;')
+    for j in range(2,18,2):
+        print('&lt;p&gt;'+group[j]+'|Website:'+'&lt;a href="https://'+group[j]+'.github.io/cd2021'+'"&gt;'+group[j]+'&lt;/a&gt;'+'|Repository:'+'&lt;a href="https://github.com/'+group[j]+'/cd2021'+'"&gt;'+group[j]+'&lt;/a&gt;&lt;/p&gt;')</pre>
+<p>version1程式中檔案資料夾 <a href="http://mde.tw/cd2021/downloads/stage3/stage3_2a.txt">stage3_2a.txt</a> 其中學號有誤，會導致排序有誤。</p>
+<p><strong>程式碼(version2):</strong></p>
+<pre class="brush:py;auto-links:false;toolbar:false" contenteditable="false"># open file, default is read mode, since txt content no chinese char4
+# no encoding = "UTF-08" is needed
+with open("stage3_2a.txt") as fh:
+    # readlines will read into the whole line and put into list format 23
+    # has \n at the end of each line 13
+    data = fh.readlines()
+    data = [a.replace('4823122','40823122') for a in data]
+    data = [c.replace('\t\t\t\t','') for c in data]
+    print(data)
+#print(len(data))1
+for i in range(len(data)):
+    group = data[i].rstrip("\n").split("\t")
+    print('&lt;p&gt;'+group[0]+'|&lt;a href="https://'+group[1]+'.github.io/stage3-ag'+group[0][9]+'"&gt;網站&lt;/a&gt;|&lt;a href="https://github.com/'+group[2]+'/stage3-ag'+group[0][9]+'"&gt;倉儲&lt;/a&gt;&lt;/p&gt;')
+# the following will use group data to generate needed html
+  
+    for j in range(2,18,2):
+        try:
+            print('&lt;p&gt;'+group[j]+'|Website:'+'&lt;a href="https://'+group[j]+'.github.io/cd2021'+'"&gt;'+group[j]+'&lt;/a&gt;'+'|Repository:'+'&lt;a href="https://github.com/'+group[j]+'/cd2021'+'"&gt;'+group[j]+'&lt;/a&gt;&lt;/p&gt;')
+        except:
+            continue</pre>
+<p><span>version2程式中字串 </span></p>
+<pre class="brush:py;auto-links:false;toolbar:false" contenteditable="false">with open("stage3_2a.txt") as fh:</pre>
+<p>開啟檔案 stage3_2a</p>
+<pre class="brush:py;auto-links:false;toolbar:false" contenteditable="false">data = fh.readlines()</pre>
+<p>字串為:</p>
+<p><span>用於讀取所有行(直到結束)並返回列表，該列表可以由Python的for... in ...結構進行處理。</span></p>
+<p><span><span>如果碰到結束，則返回空字符串。</span></span></p>
+<pre class="brush:py;auto-links:false;toolbar:false" contenteditable="false">data = [a.replace('4823122','40823122') for a in data]</pre>
+<p><span>字串為:</span></p>
+<p><span>把字符串中的old（舊字符串） 替換成new(新字符串)，如果指定第三個參數max，則替換不超過max 次，等於把 "4823112" 換成 "40823112"</span></p>
+<p><span><code class="py plain">data </code><code class="py keyword">=</code><span> </span><code class="py plain">[c.replace(</code><code class="py string">'\t\t\t\t'</code><code class="py plain">,'') </code><code class="py keyword">for</code><span> </span><code class="py plain">c </code><code class="py keyword">in</code><span> </span><code class="py plain">data]</code></span></p>
+<p><span><code class="py plain">字串為:</code></span></p>
+<p><code class="py plain">(</code><code class="py string">'\t\t\t\t'</code><code class="py plain">,'')將排序出來的結果作空格</code></p>
+<pre class="brush:py;auto-links:false;toolbar:false" contenteditable="false">for i in range(len(data)):</pre>
+<p><span>字串為:</span></p>
+<p><span>分析檔案範圍有六組，進行迴圈，變數為i</span></p>
 <h4>列出各分組倉儲, 分組網站與學員倉儲及學員網站連結:</h4>
-<p>(待補)</p>
-<h2>W11-task2</h2>
+<p>(待補)</p><h2>W11-task2</h2>
 <p>執行Task2，<span>stage1 與 stage2 所完成的 coppeliasim 場景, 採 Python remote API 進行操控, 並將過程拍成影片。</span></p>
 <p><span>CoppeliaSim 使用 <a href="http://a.kmol.info:88/CoppeliaSimEdu_4.2.0.7z">4.2.0 版</a><span>.</span></span></p>
 <p><span><span>將stage1 與 stage2 所完成的coppeliasim場景, 使用 Python remote API 進行操控:</span></span></p>
@@ -1060,7 +1100,8 @@ errorCode=vrep.simxSetJointTargetVelocity(clientID,right_motor_handle,2, vrep.si
 <p>下載 <a href="https://obsproject.com/">OBS</a> 並使用 <a href="https://www.youtube.com/channel/UCd3WMYoS7LQ5-Yh1u7gXbpA">Youtube</a> 進行直播，<span>每週各組按照組員順序, 於每堂課程時段, 輪流由 2-3 名同學開啟，<br/>因帳號第一次直播需要24小時後才能開播，須臾下次上課前準備好此功能。</span></p>
 <p><span>下圖為鎖定頁面:</span></p>
 <p><span><img alt="" height="597" src="/images/obs-1.png" width="1024"/></span></p>
-<p><span>下載 <a href="https://obsproject.com/">OBS</a> ，OBS軟體在擷取顯示器時是使用內顯，現在大部分筆電都有獨顯，所以在安裝玩OBS要擷取顯示器時會出現無法擷取顯示器的問題。</span></p>
+<p><span>下方為解鎖後測試結果:</span></p>
+<p><iframe allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen="allowfullscreen" frameborder="0" height="315" src="https://www.youtube.com/embed/E5RSCmZYSoc" title="YouTube video player" width="560"></iframe><span>下載 <a href="https://obsproject.com/">OBS</a> ，OBS軟體在擷取顯示器時是使用內顯，現在大部分筆電都有獨顯，所以在安裝玩OBS要擷取顯示器時會出現無法擷取顯示器的問題。</span></p>
 <p><span>以下講解如何解決顯示器無法擷取問題:</span></p>
 <p><span>Step1:</span></p>
 <p>  開啟顯示設定</p>
