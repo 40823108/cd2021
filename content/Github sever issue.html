@@ -133,74 +133,22 @@ img.add_border {
           </div>
           
         </header>
-    <div id="tipue_search_content">W4 << <a href='W4.html'>Previous</a> <a href='W6.html'>Next</a> >> W6<br /><h1>W5</h1>
-<p>第五週分組專案開始，分組以第一次分組兩兩合併為主。</p>
-<p>組別為:stage2-ag1</p>
-<p>組員:</p>
-<p>40823108-cd2021</p>
-<p>40823109<span>-cd2021</span></p>
-<p>40823112<span>-cd2021</span></p>
-<p>40823145<span>-cd2021</span></p>
-<p>本次專案沿用stage1-ag1之專案，為了讓模型能夠按照我們的意思做動，我們嘗試編寫Lua程式並以方向鍵進行控制。</p>
-<p>下方為第一次測試程式與模擬圖</p>
-<p><img alt="" height="960" src="./../images/EV3-12.jpg" width="1706"/></p>
-<p>Lua程式:</p>
-<pre class="brush:lua;auto-links:false;toolbar:false" contenteditable="false">threadFunction=function()
-    -- put your actuation code here
- while sim.getSimulationState()~=sim.simulation_advancing_abouttostop do
-    -- Read the keyboard messages (make sure the focus is on the main window, scene view):
-        message,auxiliaryData=sim.getSimulatorMessage()
-        while message~=-1 do
-            if (message==sim.message_keypress) then
-if (auxiliaryData[1]==2007) then
-                -- up key
-                velocity=1000
-                torque=10000
-                Shape4 = 1000
-                Shape7 = 1000
-            end
-            if (auxiliaryData[1]==2008) then
-                -- down key
-                velocity=1000
-                torque=10000
-                Shape4 = 1000
-                Shape7 = 1000
-            end
-            if (auxiliaryData[1]==2009) then
-                -- left key
-                velocity=1000
-                torque=10000
-                Shape4 = 1000
-                Shape7 = 1000
-            end
-            if (auxiliaryData[1]==2010) then
-                -- right key
-                velocity=1000
-                torque=10000
-                Shape4 = 1000
-                Shape7 = 1000
-            end
-        end
-        message,auxiliaryData=sim.getSimulatorMessage()
-    end
-    if Shape4 == 1
-        then sim.setJointPosition(joint_1, 1000, orientation)
-    if Shape7 == 1
-        then sim.setJointPosition(joint_2, 1000, orientation)
-    end
-        sim.setJointTargetVelocity(joint,velocity)
-    end
-        joint_1=sim.getObjectHandle('joint_1')
-        joint_2=sim.getObjectHandle('joint_2')
-        Shape4=sim.getObjectHandle('Shape4')
-        Shape7=sim.getObjectHandle('Shape7')
-        velocity=0
-        torque=0
-        Shape4 = 0
-        Shape7 = 0
-end</pre>
-<p>因部分語法有誤，日後待除錯。</p>
-<br />W4 << <a href='W4.html'>Previous</a> <a href='W6.html'>Next</a> >> W6</div>
+    <div id="tipue_search_content">Android for Webcam << <a href='Android for Webcam.html'>Previous</a> <br /><h1>Github sever issue</h1>
+<p>2021/5/16在推送改版時發生github page無法建構頁面問題，<span>在github pages設定中有出現警告your site is having problems building :unable to build page.</span></p>
+<p><span>使用git reset HEAD^退回版本也不無法進行改版，如果持續改版會收到下方郵件:</span><a class="link" href="https://docs.github.com/articles/troubleshooting-jekyll-builds" rel="nofollow noopener noreferrer" target="_blank">https://docs.github.com/articles/troubleshooting-jekyll-builds</a></p>
+<p><img alt="" height="1792" src="./../images/githubpage-1.jpg" width="828"/></p>
+<p>倉儲改版會出現無法轉檔的情形</p>
+<p><img alt="" height="960" src="./../images/githubpage-2.jpg" width="1706"/></p>
+<p><span>本想使用git log --oneline來排查commit ID並用git reset HEAD^退回版本來解決，經過多次退回版本無效</span></p>
+<p><span><img alt="" height="511" src="./../images/githubpage-3.jpg" width="980"/></span></p>
+<p><span><img alt="" height="513" src="./../images/githubpage-4.jpg" width="977"/></span></p>
+<p><span><img alt="" height="511" src="./../images/githubpage-5.jpg" width="977"/></span></p>
+<p><span>最後於Gitter發問也有學員發生同樣問題，最後由老師在github官網發現是github sever的問題</span></p>
+<p><span>於2021/5/16 P.M. 10:00-11:00 Github sever 恢復正常由老師測試可否正常轉換</span></p>
+<p><span><img caption="false" height="1080" src="./../images/githubpage-6.jpg" width="1920"/></span></p>
+<p><span><img caption="false" height="1080" src="./../images/githubpage-7.jpg" width="1920"/><br/></span></p>
+<p><span><img alt="" height="960" src="./../images/githubpage-8.jpg" width="1706"/></span></p>
+<p><span>論壇處也有許多Github用戶發生同樣問題!</span></p><br />Android for Webcam << <a href='Android for Webcam.html'>Previous</a> </div>
         
     <!-- footer -->
       <div class="container">
