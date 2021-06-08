@@ -42,7 +42,8 @@
 <p><i><em><em><em>    Website:<strong> <span> </span><a href="https://40823108.github.io/cd2021/content/index.html">cd 2021 Website</a></strong></em></em></em></i></p>
 <p><i><em><em><em>    <span>Group warehouse</span><i>:  --</i></em></em></em></i></p>
 <p><i><em><em><em>    Group website: --</em></em></em></i></p>
-<p></p><h1>KMOLab basis</h1>
+<p></p>
+<h1>KMOLab basis</h1>
 <p><strong>About:</strong></p>
 <p>此內容管理系統以 <a href="https://github.com/mdecourse/cmsimde">https://github.com/mdecourse/cmsimde</a> 作為 submodule 運作, 可以選定對應的版本運作, cmsimde 可以持續改版, 不會影響之前設為 submodule, 使用舊版 cmsimde 模組的內容管理相關運作.</p>
 <h4>利用 cmsimde 建立靜態網誌方法:</h4>
@@ -1211,7 +1212,156 @@ errorCode=vrep.simxSetJointTargetVelocity(clientID,right_motor_handle,2, vrep.si
 <p>本課程將在 W13-W14 週採取同步線上模式上課, 修課人員應密切注意 <a href="https://gitter.im/mdecourse/cd2021">https://gitter.im/mdecourse/cd2021</a><span> </span>上之公告, 線上同步上課將採 OBS + Youtube 配合<span> </span><a href="https://meet.google.com/">https://meet.google.com</a><span> </span>直播方式進行,<span> </span><span>修課人員</span>必須事先登入 github 帳號與 @gm 電子郵箱帳號, 以便在課程直播網站上留言討論.</p>
 <p>同步直播課程進行過程將指定各組員針對課程內容進行直播操作, 負責直播<span>修課人員</span>必須即時將直播網址公布於<span> </span><a href="https://gitter.im/mdecourse/cd2021">https://gitter.im/mdecourse/cd2021</a>, 以便與其他修課生及老師進行互動.</p>
 <p>課程同步直播時段將與上課時段相同, 每段直播中間的暫停時間將視實際情況決定。</p>
-<p><img alt="" height="960" src="/images/Webcam-14.jpg" width="1706"/></p>
+<p>與組員同步直播</p>
+<p><iframe allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen="allowfullscreen" frameborder="0" height="315" src="https://www.youtube.com/embed/a8Uw1WOhCYk" title="YouTube video player" width="560"></iframe></p>
+<h2>W14</h2>
+<h2>W15</h2>
+<p>字幕翻譯與整理:<br/><br/></p>
+<p><strong>First:</strong></p>
+<p><iframe allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen="allowfullscreen" frameborder="0" height="315" src="https://www.youtube.com/embed/IKOGwoJ2HLk" title="YouTube video player" width="560"></iframe></p>
+<p></p>
+<p>We saw this simple two-link robot in the previous lecture about forward kinematics.</p>
+<p>我們在前面看到了這個簡單的雙連桿機器人關於正向運動學的講座。</p>
+<p>The tooltip pose of the robot is simply described by two numbers, coordinates x and y is relative to the world coordinate system.</p>
+<p>該機器人的工具提示姿態由兩個數字簡單描述，坐標 x 和y 相對於世界坐標系。</p>
+<p>So, the problem here is that given x and y, we have to determine the connecting angle Q1 and Q2.</p>
+<p>所以，這裡的問題是給定 x 和 y，我們要確定連接角 Q1和Q2.</p>
+<p>The solution we will follow in this section is geometric one.</p>
+<p>我們將在本節中遵循的解決方案是幾何解決方案。</p>
+<p>We're going to start with a simple piece of construction.</p>
+<p>我們將從一個簡單的結構開始。</p>
+<p>We're going to overlay the red triangle on top of our robot.</p>
+<p>我們將在我們的機器人頂部覆蓋紅色三角形。</p>
+<p>We know that the end point coordinate is x, y, so the vertical height of the triangle is y,horizontal width is x.</p>
+<p>我們知道終點坐標是x，y，所以三角形的垂直高度是y，水平寬度是x。</p>
+<p>And, using Pythagoras theorem, we can write thagoras r squared equals x squared plus y squared.</p>
+<p>並且，使用畢達哥拉斯定理，我們可以寫出 thagoras r 平方等於 x 平方加 y 平方。</p>
+<p>So far.so easy</p>
+<p>到目前爲止，很容易</p>
+<p>Now, we're going to look at this triangle highlighted here in red and we want to determine the angle alpha.</p>
+<p>現在，我們將查看此處以紅色突出顯示的三角形，我們要確定角度 alpha。</p>
+<p>In order to do that, we need to use the cosine rule.</p>
+<p>為了做到這一點，我們需要使用餘弦規則。</p>
+<p>And, if you're a little rusty on the cosine rule, here is a bit of a refresher.</p>
+<p>而且，如果你對余弦規則有點生疏，這裡有一點複習。</p>
+<p>We have an arbitrary triangle.</p>
+<p>我們有一個任意三角形。</p>
+<p>We don't have to have any right angles in it and we're going to label the length of this edge as A and the angle opposite that edge, we're going to label as little a.</p>
+<p>我們不必在其中有任何直角，我們將這條邊的長度標記為 A，而與該邊相對的角度，我們將標記為小 a。</p>
+<p>And, we do the same for this edge and this angle, and this edge and this angle.</p>
+<p>並且，我們對這條邊和這個角，以及這條邊和這個角做同樣的事情。</p>
+<p>So, all together, the sides are labelled capitals A, B and C, and the angles are labelled little a, little b, and little c.</p>
+<p>因此，所有邊都標記為大寫字母 A、B 和 C，角標記為小 a、小 b 和小 c。</p>
+<p>So, the cosine rule is simply this relationship here.</p>
+<p>所以，餘弦規則就是這裡的這種關係。</p>
+<p>It's a bit like Pythagoras' theorem except for this extra term on the end with the cos a in it.</p>
+<p>它有點像畢達哥拉斯的定理，除了最後一個額外的術語，其中有 cos a。</p>
+<p>Now, let's apply the cosine rule to the particular triangle we looked at a moment rul ago.</p>
+<p>現在，讓我們將餘弦規則應用於我們剛才看到的特定三角形。</p>
+<p>It's pretty straightforward to write down this particular relationship.</p>
+<p>寫下這種特殊關係非常簡單。</p>
+<p>We can isolate the term cos alpha which gives us the angle alpha that we're interested in.</p>
+<p>我們可以分離出術語 cos alpha，它為我們提供了我們感興趣的角度 alpha。</p>
+<p>And, it's defined in terms of the constant link lengths, A1 and A2 and the position of the end effector,x and y.</p>
+<p>而且，它是根據恆定連桿長度 A1 和 A2 以及末端執行器的位置 x 和 y 定義的。</p>
+<p>We can write this simple relationship between the angles alpha and Q2.</p>
+<p>我們可以寫出角度 alpha 和 Q2 之間的這種簡單關係。</p>
+<p>And, we know from the shape of the cosine function that cos of Q2 must be equal to negative of cos alpha.</p>
+<p>而且，我們從餘弦函數的形狀知道，Q2 的 cos 必須等於 cos alpha 的負值。</p>
+<p>This time, let's just write an expression for the cosine of the joined angle Q2.</p>
+<p>這一次，讓我們為連接角 Q2 的餘弦寫一個表達式。</p>
+<p>Now, we're going to draw yet another red triangle and we're going apply some simple trigonometry here.</p>
+<p>現在，我們將繪製另一個紅色三角形，並在此處應用一些簡單的三角函數。</p>
+<p>If we know Q2, then we know this length and this length of the red triangle.</p>
+<p>如果我們知道 Q2，那麼我們就知道這個長度和這個紅色三角形的長度。</p>
+<p>We can write this relationship for the sine of the joined angle Q2.</p>
+<p>我們可以為連接角 Q2 的正弦寫出這種關係。</p>
+<p>Now, we can consider this bigger triangle whose angle is beta and this side length of the triangle is given here in blue.</p>
+<p>現在，我們可以考慮這個更大的三角形，它的角是β，三角形的這條邊長在這裡用藍色給出。</p>
+<p>And, the length of the other side of the triangle is this.</p>
+<p>並且，三角形另一邊的長度是這個。</p>
+<p>So, now we can write an expression for the angle beta in terms of these parameters here.</p>
+<p>所以，現在我們可以在此處根據這些參數編寫角度 beta 的表達式。</p>
+<p>Going back to the red triangle that we drew earlier, we can establish a relationship between Q1 and the angle beta.</p>
+<p>回到我們之前畫的紅色三角形，我們可以建立Q1和角度β之間的關係。</p>
+<p>Introduce yet another angle, this one gamma and we can write a relationship between the angle gamma and the tooltip coordinates x and y.</p>
+<p>引入另一個角度，這個伽馬，我們可以寫出角度伽馬和工具提示坐標 x 和 y 之間的關係。</p>
+<p>Now, we can write a simple relationship between the angles that we've constructed, gamma and beta and the joined angle we're interested in which is Q1.</p>
+<p>現在，我們可以在我們構建的角度 gamma 和 beta 與我們感興趣的連接角度 Q1 之間寫出一個簡單的關係。</p>
+<p>And, the total relationship looks something like this.</p>
+<p>而且，整個關係看起來像這樣。</p>
+<p>Quite a complex relationship, it gives us the angle of joined one, that's Q1 in terms of the end effector coordinates y and x, and a bunch of constants, a1 and a2, and it's also a function of the second joint angle, Q2.</p>
+<p>相當複雜的關係，它為我們提供了連接的角度，即根據末端執行器坐標 y 和 x 的 Q1，以及一系列常量 a1 和 a2，它也是第二個關節角度 Q2 的函數。</p>
+<p>So, let's summarize what it is that we have derived here.1</p>
+<p>所以，讓我們總結一下我們在這裡得出的結論。1</p>
+<p>We have an expression for the cosine of Q2 and we have an expression for Q1.</p>
+<p>我們有 Q2 的餘弦表達式和 Q1 的表達式。</p>
+<p>Now, the cosine function is symmetrical about 0.</p>
+<p>現在，餘弦函數關於 0 對稱。</p>
+<p>So, if we know the value of the cosine of Q2, then there are two possible solutions, a positive angle and a negative angle.</p>
+<p>所以，如果我們知道 Q2 的餘弦值，那麼有兩種可能的解，一個正角和一個負角。</p>
+<p>We're going to explicitly choose the positive angle, which means that I can write this expression here.</p>
+<p>我們將明確選擇正角，這意味著我可以在這裡寫這個表達式。</p>
+<p>And now, we have what we call the inverse kinematic solution for this two-link robot.</p>
+<p>現在，我們有了這個雙連桿機器人的逆運動學解決方案。</p>
+<p>We have an expression for the two joined angles, Q1 and Q2 in terms of the end effector pose x and y, and a bunch of constants.</p>
+<p>我們有兩個連接角 Q1 和 Q2 的表達式，根據末端執行器姿勢 x 和 y 以及一系列常數。</p>
+<p>You notice that the two equations are not independent.</p>
+<p>你注意到這兩個方程不是獨立的。</p>
+<p>The equation for Q1, in fact, depends on the solution for Q2.</p>
+<p>事實上，Q1 的方程取決於 Q2 的解。</p>
+<p>In this case, Q2 is negative and we're going to write the solution for Q2 with a negative sign in front of the inverse cosine.</p>
+<p>在這種情況下，Q2 是負數，我們將在反餘弦前用負號編寫 Q2 的解。</p>
+<p>Now, we need to solve for Q1, so we're going to introduce this particular red triangle, the angle beta that we solved previously, and the angle gamma which is defined in terms of y and x.</p>
+<p>現在，我們需要求解 Q1，因此我們將介紹這個特定的紅色三角形、我們之前求解的角度 beta 以及根據 y 和 x 定義的角度 gamma。</p>
+<p>Now, we write a slightly different relationship between q1, gamma and beta, different to what we had before.</p>
+<p>q1、ɣ和β之間的關西，和之前求的不同。</p>
+<p>There’s a change of sign involved.</p>
+<p>涉及到符號的變化。</p>
+<p>Then, we can substitute all that previous equation and come up with this expression for q1.</p>
+<p>然後我們可代換之前所有等式，並求得此q1方程式。</p>
+<p>Again, there is a change of sign here.</p>
+<p>同樣，這裡的符號發生了變化。</p>
+<p>Previously, this was a negative sign.</p>
+<p>先前，這是個負號。</p>
+<p>And, here in summary form is the solution for the inverse kinematics of our two-link robot when it is in this particular configuration, where q2 is negative.</p>
+<p>這是雙連桿機構在此逆向運動學的總形式，其中q2為負。</p>
+<p>Let’s compare the two solutions, the case where q2 is positive and the case where q2 is negative.</p>
+<p>讓我們比較兩個解決方案，q2為正和q2為負的情況。</p>
+<p><strong>Part two:</strong></p>
+<p><iframe allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen="allowfullscreen" frameborder="0" height="315" src="https://www.youtube.com/embed/eIZuz1XCd0w" title="YouTube video player" width="560"></iframe></p>
+<p><span>Here we have the same two link robot as we just looked at but this time we're going tosolve it using an analytical approach , that is we're going to rely much more on algebra ,particular linear algebra rather than geometry .</span></p>
+<p>這裡我們有與我們相同的兩個鏈接機器人只是看著，但這次我們要使用分析方法解決它，即我們是否會更多地依賴代數，特定的線性代數而不是幾何。</p>
+<p><span>We have an expression E , which is the homogeneous transformation which represents the pose of the robots endefector and we looked at this in the last lecture , we can write the endefector pose as a sequence of elementary homogeneous transformations .</span></p>
+<p>我們有一個表達式 E，它是齊次的表示姿勢的變換</p>
+<p>A rotation by Q1 , a translation along the X direction by A1 , a rotation by Q2 and then a translation in the X direction by A2 .</p>
+<p>Q1 旋轉，A1 沿 X 方向平移，Q2 旋轉，然後 A2 沿 X 方向平移。</p>
+<p>If I expand this out , multiply all the transformations together , I get the expression shown here ; a three by three homogeneous transformation matrix representing the pose of the robot's endefector.</p>
+<p>如果我將其展開，將所有變換相乘，就會得到此處所示的表達式 E ;它是一個三乘三的齊次變換矩陣，表示機械手臂的最終的位置。</p>
+<p>Now for this particular two link robot , we are only interested in the position of its endefector , it's X and Y co - ordinate and they are these two elements within the homogeneous transformation matrix , so I'm going to copy those out .</p>
+<p>現在對於這個特殊的兩連桿機器人，我們只對它的最終位置感興趣，與它有關的是 X 和 Y 坐標，它們是齊次變換矩陣中的這兩個元素，所以我將把它們複製出來。</p>
+<p>So here again is our expression for X and Y and what we're going to do is a fairly common trick , we're going to square and add these two equations and I get a relationship that looks like this .</p>
+<p>所以這裡又是我們對 X 和 Y 的表達式，我們要做的是一個相當常見的技巧，我們要將它平方並將這兩個方程相加，我得到一個看起來像這樣的關係式。</p>
+<p>Now I can solve for the joint angle Q2 in terms of the endefector pose X and Y and the robot's constants A1 and A2.</p>
+<p>現在我可以根據最終位置X和Y以及機械手臂的常數A1及A2來求出關節角度Q2。</p>
+<p>Now what I'm going to do is apply the sum of angles identity .</p>
+<p>現在我要做的是應用角度之和的特性。</p>
+<p>I'm going to expand these terms, sine of Q1 plus Q2 or cos of Q1 plus Q2 and to make life a little bit easier, I'm going to make some substations, so where ever I had cos Q2, I'm going to write C2 and where ever I had sine Q2, I'm going to write S2.</p>
+<p>我將展開這些項，Q1 的正弦加 Q2 或 Q1 的餘弦加 Q2，為了讓生活更輕鬆一點，我將建立一些分部，所以只要有 cos Q2，我會將其取代為C2並且在有正弦Q2的地方，我會將其取代為S2。</p>
+<p>It's a fairly common shorthand when people are looking at robot kinematic equations.</p>
+<p>當人們解決機械手臂運動學方程式時，這是一個相當常見的快速記法。</p>
+<p>And here are the equations after making those substitutions.</p>
+<p>這是進行替換後的方程式。</p>
+<p>Looking at these two equations, I can see that they fall into a very well known form and for that form there is a very well known solution.</p>
+<p>看看這兩個方程式，我可以看到它們屬於一個眾所周知的形式，對於這種形式，有一個淺顯易見的解決方案。</p>
+<p>So I'm going to consider just one of the equations, the equation for Y and using our well known identity and it's solution, I can determine the values for the variables little a, little b and little c and once l've determined those, then I can just write down the solution for Q1, which x is the equivalent of theta in this particular case.</p>
+<p>所以我將只考慮其中一個方程，Y 的方程，並使用我們眾所周知的恆等式和它的解，我可以確定變量小 a、小 b 和小 c 的值，一旦我確定了這些，然後我可以寫下 Q1 的解決方程，在這種特殊情況下，x 相當於<span> </span><span>θ</span>。</p>
+<p>Here again is our expression for Q1, copied over from the previous slide and we may remember from earlier in our workings that we determined this particular relationship; X squared plus Y squared is equal to this particular complex expression.</p>
+<p>這裡再次是我們對 Q1 的表達，從上一張幻燈片複製過來，我們可能還記得在我們早期的說明中，確定了這種特殊關係； X 平方加 Y 平方等於這個特定的複雜表達式。</p>
+<p>So I can substitute that in and do some simplification and I end up with this slightly less complex expression for Q1.</p>
+<p>因此，我可以將其替換並進行一些簡化，最終得到 Q1 的這個稍微不那麼複雜的表達式。</p>
+<p>And it is the same expression that I got following the geometric approach in the previous section.</p>
+<p>這與我在上一節中遵循幾何方法求出的表達式一模一樣。</p>
 <h1>phone webcam</h1>
 <p>為因應校方公告:</p>
 <p><a href="http://mde.tw/cd2021/downloads/%E3%80%8C%E5%9A%B4%E9%87%8D%E7%89%B9%E6%AE%8A%E5%82%B3%E6%9F%93%E6%80%A7%E8%82%BA%E7%82%8E%E3%80%8D%E7%96%AB%E6%83%85%E8%AA%B2%E7%A8%8B%E5%BD%88%E6%80%A7%E8%99%95%E7%90%86%E4%BA%8B%E9%A0%85_%E9%81%A0%E8%B7%9D%E6%95%99%E5%AD%B8%E5%85%AC%E5%91%8A_0515D(%E4%B8%AD%E8%8B%B1%E7%89%88%E6%9C%AC).pdf">「嚴重特殊傳染性肺炎」疫情課程彈性處理事項_遠距教學公告_0515D(中英版本).pdf</a></p>
