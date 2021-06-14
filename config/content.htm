@@ -1587,7 +1587,38 @@ robot.MoveJ([0,0,0,0,10,-200])
 <p><a href="https://github.com/40823108/cd2021/blob/main/downloads/MTB.dwg">MTB.dwg</a></p>
 <p><a href="https://github.com/40823108/cd2021/blob/main/downloads/MTB.stl">MTB.stl</a></p>
 <h4>2. 建立 CoppeliaSim 4.1.0 MTB robot 場景</h4>
-<p></p>
+<p>檔案:</p>
+<p><a href="https://github.com/40823108/cd2021/blob/main/downloads/MTB-2.ttt">MTB-2.ttt</a></p>
+<p><a href="https://github.com/40823108/cd2021/blob/main/downloads/MTB-2.lua">MTB-2.lua</a></p>
+<p>操作與講解</p>
+<p><iframe allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen="allowfullscreen" frameborder="0" height="315" src="https://www.youtube.com/embed/BVY-9fBy-dU" title="YouTube video player" width="560"></iframe></p>
+<p>下方為lua程式:</p>
+<pre class="brush:lua;auto-links:false;toolbar:false" contenteditable="false">function move(j1,j2,j3,j4)
+    modelBase=sim.getObjectAssociatedWithScript(sim.handle_self)
+    modelName=sim.getObjectName(modelBase)
+    jointHandle={}
+    j={j1*math.pi/180,j2*math.pi/180,j3*math.pi/180,j4*math.pi/180}
+    for i=1,4,1 do
+        jointHandle[i]=sim.getObjectHandle('MTB_axis'..i)
+        sim.wait(1)
+    end
+    for i=1,4,1 do
+        sim.setJointPosition(jointHandle[i],j[i])
+        sim.wait(1)
+    end
+    
+end
+
+function sysCall_threadmain()
+    move(0,0,0,0)
+    move(30,30,0,0)
+    move(60,60,0.5,0)
+    move(0,0,0,30)
+    move(30,0,0,0)
+    move(0,0,0,0)
+    
+    
+end</pre>
 <h4>3. 手臂末端加入 components-gripper-suction pad 吸盤</h4>
 <p></p>
 <h4>4. 逆向運動學函式</h4>
