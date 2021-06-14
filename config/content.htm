@@ -1411,10 +1411,12 @@ while idTake &gt;= 0:
 # Move home when the robot finishes
 robot.MoveJ([0,0,0,0,10,-200])
 </pre>
-<p></p><h2>W14</h2>
+<p></p>
+<h2>W14</h2>
 <p>請簡化上列四軸機械手臂取放方塊零件的 Lua 程式, 去除客製化控制 plugin 語法部分, 且刪除其舊有的 GUI 程式控制介面, 改用 CoppeliaSim 制式的 Lua Script 編寫與原先取放方塊零件相同的操控流程.</p>
 <p>請採用 CoppeliaSim<span> </span><a href="https://www.coppeliarobotics.com/helpFiles/en/customUIPlugin.htm">Qt based GUI 介面</a>, 改寫原<span> </span><a href="https://github.com/CoppeliaRobotics/models/blob/master/robots/non-mobile/MTB%20robot.ttm">MTB robot.ttm</a><span> </span>模型中的 legacy GUI 介面視窗.</p>
-<p></p><h2>W15</h2>
+<p></p>
+<h2>W15</h2>
 <p>字幕翻譯與整理:<br/><br/></p>
 <p><strong>First:</strong></p>
 <p><iframe allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen="allowfullscreen" frameborder="0" height="315" src="https://www.youtube.com/embed/IKOGwoJ2HLk" title="YouTube video player" width="560"></iframe></p>
@@ -1564,7 +1566,33 @@ robot.MoveJ([0,0,0,0,10,-200])
 <p>And it is the same expression that I got following the geometric approach in the previous section.</p>
 <p>這與我在上一節中遵循幾何方法求出的表達式一模一樣。</p>
 <p><img caption="false" height="388" src="/images/W15-3.jpg" width="690"/></p>
-<p><img caption="false" height="388" src="/images/W15-4.jpg" width="690"/></p><h1>phone webcam</h1>
+<p><img caption="false" height="388" src="/images/W15-4.jpg" width="690"/></p>
+<p></p>
+<h2>W16</h2>
+<h4>MTB_robot 的取放方塊流程規劃 (Process Planning):</h4>
+<h4>1. Onshape 零組件繪製:</h4>
+<p><img alt="" height="910" src="/images/W16-1.jpg" width="1799"/></p>
+<p>繪製影片:</p>
+<p><iframe allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen="allowfullscreen" frameborder="0" height="315" src="https://www.youtube.com/embed/htGesVY6Dmw" title="YouTube video player" width="560"></iframe></p>
+<p>利用onshape建立各部份零組件</p>
+<p><a href="https://github.com/40823108/cd2021/blob/main/downloads/Link1.stl">Link1</a></p>
+<p><img alt="" height="390" src="/images/W16-2.jpg" width="693"/></p>
+<p><a href="https://github.com/40823108/cd2021/blob/main/downloads/Link2.stl">Link2</a></p>
+<p><img caption="false" height="390" src="/images/W16-3.jpg" width="693"/></p>
+<p><a href="https://github.com/40823108/cd2021/blob/main/downloads/Link3.stl">Link3</a></p>
+<p><img caption="false" height="390" src="/images/W16-4.jpg" width="693"/></p>
+<p><a href="https://github.com/40823108/cd2021/blob/main/downloads/Base.stl">Base</a></p>
+<p><img alt="" height="390" src="/images/W16-5.jpg" width="693"/></p>
+<p><img caption="false" height="333" src="/images/W16-6.jpg" width="693"/></p>
+<p><a href="https://github.com/40823108/cd2021/blob/main/downloads/MTB.dwg">MTB.dwg</a></p>
+<p><a href="https://github.com/40823108/cd2021/blob/main/downloads/MTB.stl">MTB.stl</a></p>
+<h4>2. 建立 CoppeliaSim 4.1.0 MTB robot 場景</h4>
+<p></p>
+<h4>3. 手臂末端加入 components-gripper-suction pad 吸盤</h4>
+<p></p>
+<h4>4. 逆向運動學函式</h4>
+<p></p>
+<h4>5. Python remote API 逆向運動學函式</h4><h1>phone webcam</h1>
 <p>為因應校方公告:</p>
 <p><a href="http://mde.tw/cd2021/downloads/%E3%80%8C%E5%9A%B4%E9%87%8D%E7%89%B9%E6%AE%8A%E5%82%B3%E6%9F%93%E6%80%A7%E8%82%BA%E7%82%8E%E3%80%8D%E7%96%AB%E6%83%85%E8%AA%B2%E7%A8%8B%E5%BD%88%E6%80%A7%E8%99%95%E7%90%86%E4%BA%8B%E9%A0%85_%E9%81%A0%E8%B7%9D%E6%95%99%E5%AD%B8%E5%85%AC%E5%91%8A_0515D(%E4%B8%AD%E8%8B%B1%E7%89%88%E6%9C%AC).pdf">「嚴重特殊傳染性肺炎」疫情課程彈性處理事項_遠距教學公告_0515D(中英版本).pdf</a></p>
 <p>5月17日至5月30日全校所有課程改採遠距教學。</p>
