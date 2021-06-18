@@ -2108,7 +2108,200 @@ if (auxiliaryData[1]==2007) then
         Shape4 = 0
         Shape7 = 0
 end</pre>
-<p></p><h1>Stage3-ag1</h1>
+<p><span>因部分語法有誤，日後待除錯。</span></p>
+<p><em><strong>W6</strong></em></p>
+<p>經過一週的時間，我們將程式進行了修改，但還是有錯誤，無法讓機構以上下左右鍵的方式進行控制。</p>
+<p>下方為模擬圖:</p>
+<p><img caption="false" height="357" src="/images/EV3-13.jpg" width="634"/></p>
+<p><strong>第二次Lua程式測試:</strong></p>
+<pre class="brush:lua;auto-links:false;toolbar:false" contenteditable="false">function sysCall_init()
+    -- do some initialization here
+    left_front_handle= sim.getObjectHandle('left_front')
+    left_back_handle= sim.getObjectHandle('left_back')
+    right_back_handle= sim.getObjectHandle('right_back')
+    right_front_handle= sim.getObjectHandle('right_front')
+      
+    joint_1_handle= sim.getObjectHandle('joint_1')
+      
+    joint_2_handle= sim.getObjectHandle('joint_2')
+    MaxVel=10
+    leftvelocity=0
+    rightvelocity=0
+    dVel=0.5;
+    --sim.setJointTargetVelocity(left_front_handle,leftvelocity)
+    sim.setJointTargetVelocity(left_back_handle,leftvelocity)
+    sim.setJointTargetVelocity(right_back_handle,rightvelocity)
+    --sim.setJointTargetVelocity(right_front_handle,rightvelocity)
+end
+  
+function sysCall_actuation()
+    -- put your actuation code here
+    message,auxiliaryData=sim.getSimulatorMessage()
+    while message~=-1 do
+        if (message==sim.message_keypress) then
+            if (auxiliaryData[1]==32) then
+                -- right key
+                leftvelocity=0
+                rightvelocity=0
+                sim.setJointForce(left_front_handle, 0)
+                sim.setJointForce(left_back_handle, 0)
+                sim.setJointForce(right_back_handle, 0)
+                sim.setJointForce(right_front_handle, 0)
+                  
+                  
+                sim.setJointForce(joint_1_handle, 1000)
+                  
+                sim.setJointForce(joint_2_handle, 1000)
+                break
+            else
+            --sim.setJointForce(left_front_handle, 10000)
+            sim.setJointForce(left_back_handle, 10000)
+            sim.setJointForce(right_back_handle, 10000)
+            --sim.setJointForce(right_front_handle, 10000)
+              
+            sim.setJointForce(joint_1_handle, 0)
+              
+            sim.setJointForce(joint_2_handle, 0)
+            end
+            if (auxiliaryData[1]==2007) then
+                -- up key
+                leftvelocity=(leftvelocity+rightvelocity)/2
+                rightvelocity=leftvelocity
+                leftvelocity=leftvelocity+dVel
+                rightvelocity=rightvelocity+dVel
+            end
+            if (auxiliaryData[1]==2008) then
+                -- down key
+                leftvelocity=(leftvelocity+rightvelocity)/2
+                rightvelocity=leftvelocity
+                leftvelocity=leftvelocity-dVel
+                rightvelocity=rightvelocity-dVel
+            end
+            if (auxiliaryData[1]==2009) then
+                -- left key
+                leftvelocity=leftvelocity-dVel
+                rightvelocity=rightvelocity+dVel
+            end
+            if (auxiliaryData[1]==2010) then
+                -- right key
+                leftvelocity=leftvelocity+dVel
+                rightvelocity=rightvelocity-dVel
+            end
+        end
+        message,auxiliaryData=sim.getSimulatorMessage()
+    end
+      
+    if leftvelocity&gt;MaxVel then
+        leftvelocity=MaxVel
+    end
+    if leftvelocity&lt;-MaxVel then
+        leftvelocity=-MaxVel
+    end
+      
+    if rightvelocity&gt;MaxVel then
+                rightvelocity=MaxVel
+    end
+    if rightvelocity&lt;-MaxVel then
+                rightvelocity=-MaxVel
+    end
+      
+    --sim.setJointTargetVelocity(left_front_handle,leftvelocity)
+    sim.setJointTargetVelocity(left_back_handle,leftvelocity)
+    sim.setJointTargetVelocity(right_back_handle,rightvelocity)
+    --sim.setJointTargetVelocity(right_front_handle,rightvelocity)
+      
+end
+  
+function sysCall_sensing()
+    -- put your sensing code here
+end
+  
+function sysCall_cleanup()
+    -- do some clean-up here
+end
+  
+-- See the user manual or the available code snippets for additional callback functions and details</pre>
+<p>第二次程式失敗，日後將持續進除錯。</p>
+<p><em><strong>W7</strong></em></p>
+<p><strong>利用鍵盤操控物體行走</strong></p>
+<p><strong><img caption="false" height="343" src="/images/EV3-14.gif" width="634"/></strong></p>
+<p><strong><span>(</span><span>🔽程式碼</span><span>)</span></strong></p>
+<pre class="brush:lua;auto-links:false;toolbar:false" contenteditable="false">function sysCall_init() 
+    left_handle= sim.getObjectHandle('left_m')
+    right_handle= sim.getObjectHandle('right_m')
+    MaxVel=2
+    leftvelocity=0
+    rightvelocity=0
+    dVel=0.5;
+    sim.setJointTargetVelocity(left_handle,leftvelocity)
+    sim.setJointTargetVelocity(right_handle,rightvelocity)
+end
+ 
+function sysCall_actuation() 
+    message,auxiliaryData=sim.getSimulatorMessage()
+    while message~=-1 do
+        if (message==sim.message_keypress) then
+            if (auxiliaryData[1]==32) then
+                -- right key
+                leftvelocity=0
+                rightvelocity=0
+                sim.setJointForce(left_front_handle, 0)
+                sim.setJointForce(right_front_handle, 0)
+                break
+            else
+                sim.setJointForce(left_handle, 10000)
+                sim.setJointForce(right_handle, 10000)
+            end
+            if (auxiliaryData[1]==2007) then
+                -- up key
+                leftvelocity=(leftvelocity+rightvelocity)/2
+                rightvelocity=leftvelocity
+                leftvelocity=leftvelocity+dVel
+                rightvelocity=rightvelocity+dVel
+            end
+            if (auxiliaryData[1]==2008) then
+                -- down key
+                leftvelocity=(leftvelocity+rightvelocity)/2
+                rightvelocity=leftvelocity
+                leftvelocity=leftvelocity-dVel
+                rightvelocity=rightvelocity-dVel
+            end
+            if (auxiliaryData[1]==2009) then
+                -- left key
+                leftvelocity=leftvelocity-dVel
+                rightvelocity=rightvelocity+dVel
+            end
+            if (auxiliaryData[1]==2010) then
+                -- right key
+                leftvelocity=leftvelocity+dVel
+                rightvelocity=rightvelocity-dVel
+            end
+        end
+        message,auxiliaryData=sim.getSimulatorMessage()
+    end
+     
+    if leftvelocity&gt;MaxVel then
+        leftvelocity=MaxVel
+    end
+    if leftvelocity&lt;-MaxVel then
+        leftvelocity=-MaxVel
+    end
+     
+    if rightvelocity&gt;MaxVel then
+                rightvelocity=MaxVel
+    end
+    if rightvelocity&lt;-MaxVel then
+                rightvelocity=-MaxVel
+    end
+     
+    sim.setJointTargetVelocity(left_handle,leftvelocity)
+    sim.setJointTargetVelocity(right_handle,rightvelocity)
+     
+end</pre>
+<p><em><strong>W8</strong></em></p>
+<p><strong>增加接近傳感器使產品自動行走時，不會撞到障礙物</strong></p>
+<p><strong><img alt="" height="347" src="/images/EV3-15.gif" width="634"/></strong></p>
+<p>(<span>🔽程式碼</span>)</p><h1>Stage3-ag1</h1>
 <h1>phone webcam</h1>
 <p>為因應校方公告:</p>
 <p><a href="http://mde.tw/cd2021/downloads/%E3%80%8C%E5%9A%B4%E9%87%8D%E7%89%B9%E6%AE%8A%E5%82%B3%E6%9F%93%E6%80%A7%E8%82%BA%E7%82%8E%E3%80%8D%E7%96%AB%E6%83%85%E8%AA%B2%E7%A8%8B%E5%BD%88%E6%80%A7%E8%99%95%E7%90%86%E4%BA%8B%E9%A0%85_%E9%81%A0%E8%B7%9D%E6%95%99%E5%AD%B8%E5%85%AC%E5%91%8A_0515D(%E4%B8%AD%E8%8B%B1%E7%89%88%E6%9C%AC).pdf">「嚴重特殊傳染性肺炎」疫情課程彈性處理事項_遠距教學公告_0515D(中英版本).pdf</a></p>
