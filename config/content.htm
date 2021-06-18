@@ -2029,7 +2029,87 @@ while True:
 <p><iframe allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen="allowfullscreen" frameborder="0" height="315" src="https://www.youtube.com/embed/ASH91DmuYBk" title="YouTube video player" width="560"></iframe></p>
 <p><iframe height="580" src="https://drive.google.com/file/d/1VTZRCIs_ifjLimdZAVUOUr5o4abNILUg/preview" width="640"></iframe></p>
 <p>協同設計方法和流程：使用google meet屏幕共享進行討論和設計。 設計結果：因為尺寸是定制的，比例是個大問題。 在仿真中，零件過於復雜，導致需要簡化。 自評：65</p><h1>Stage2-ag1</h1>
-<h1>Stage3-ag1</h1>
+<p>分組專題成員：</p>
+<p>  第一位成員：<a href="https://github.com/a40823112/cd2021">a408231112</a> (組長)</p>
+<p>  第二位成員：<a href="https://github.com/40823108/cd2021">40823108</a> (組員)</p>
+<p>  <span>第三位成員：</span><a href="https://github.com/40823109/cd2021">40823109</a><span> (組員)</span></p>
+<p>  <span>第四位成員：</span><a href="https://github.com/40823145/cd2021">408231045</a><span> (組員)</span></p>
+<p><span>Website: <a href="https://a40823112.github.io/stage2-ag1/content/index.html">a40823112 Stage2-ag1 Website</a></span></p>
+<p><span>Website: <a href="https://40823108.github.io/stage2-ag1/content/index.html">40823108 Stage2-ag1 Website</a></span></p>
+<p><span>Website: <a href="https://40823109.github.io/stage2-ag1/content/index.html">40823109 Stage2-ag1 Website</a></span></p>
+<p><span>Website: <a href="https://40823145.github.io/stage2-ag1/content/index.html">40823145 Stage2-ag1 Website</a></span></p>
+<p><span>Reveal: <a href="https://a40823112.github.io/stage2-ag1/reveal/index.html#/">a40823112 Stage2-ag1 Reveal</a></span></p>
+<p><span>Reveal: <a href="https://40823108.github.io/stage2-ag1/reveal/index.html#/">40823108 Stage2-ag1 Reveal</a></span></p>
+<p><span>Reveal: <a href="https://40823145.github.io/stage2-ag1/reveal/index.html#/">40823145 Stage2-ag1 Reveal</a></span></p>
+<p><span>分組為期5週，W5~W9以下呈現內容為最後一週之成果:</span></p>
+<p>第五週分組專案開始，分組以第一次分組兩兩合併為主。</p>
+<p>組別為:stage2-ag1</p>
+<p><em><strong>W5</strong></em></p>
+<p></p>
+<p>分組討論完，決定Stage2的<span>產品設計內容，為Stage1-ag1的產品進行改良，並新增其它功能:</span></p>
+<p><em><strong>1.利用鍵盤方向鍵操控</strong></em></p>
+<p><em><strong>2.增加接近傳感器使產品自動行走時，不會撞到障礙物</strong></em></p>
+<p><em><strong><img alt="" height="357" src="/images/EV3-6.jpg" width="634"/></strong></em></p>
+<p>本次專案沿用stage1-ag1之專案，為了讓模型能夠按照我們的意思做動，我們嘗試編寫Lua程式並以方向鍵進行控制。</p>
+<p>下方為第一次測試程式與模擬圖</p>
+<p><img caption="false" height="357" src="/images/EV3-12.jpg" width="634"/></p>
+<p><strong>Lua程式:</strong></p>
+<pre class="brush:lua;auto-links:false;toolbar:false" contenteditable="false">threadFunction=function()
+    -- put your actuation code here
+ while sim.getSimulationState()~=sim.simulation_advancing_abouttostop do
+    -- Read the keyboard messages (make sure the focus is on the main window, scene view):
+        message,auxiliaryData=sim.getSimulatorMessage()
+        while message~=-1 do
+            if (message==sim.message_keypress) then
+if (auxiliaryData[1]==2007) then
+                -- up key
+                velocity=1000
+                torque=10000
+                Shape4 = 1000
+                Shape7 = 1000
+            end
+            if (auxiliaryData[1]==2008) then
+                -- down key
+                velocity=1000
+                torque=10000
+                Shape4 = 1000
+                Shape7 = 1000
+            end
+            if (auxiliaryData[1]==2009) then
+                -- left key
+                velocity=1000
+                torque=10000
+                Shape4 = 1000
+                Shape7 = 1000
+            end
+            if (auxiliaryData[1]==2010) then
+                -- right key
+                velocity=1000
+                torque=10000
+                Shape4 = 1000
+                Shape7 = 1000
+            end
+        end
+        message,auxiliaryData=sim.getSimulatorMessage()
+    end
+    if Shape4 == 1
+        then sim.setJointPosition(joint_1, 1000, orientation)
+    if Shape7 == 1
+        then sim.setJointPosition(joint_2, 1000, orientation)
+    end
+        sim.setJointTargetVelocity(joint,velocity)
+    end
+        joint_1=sim.getObjectHandle('joint_1')
+        joint_2=sim.getObjectHandle('joint_2')
+        Shape4=sim.getObjectHandle('Shape4')
+        Shape7=sim.getObjectHandle('Shape7')
+        velocity=0
+        torque=0
+        Shape4 = 0
+        Shape7 = 0
+end</pre>
+<p><em><strong>W6</strong></em></p>
+<p><em><strong></strong></em></p><h1>Stage3-ag1</h1>
 <h1>phone webcam</h1>
 <p>為因應校方公告:</p>
 <p><a href="http://mde.tw/cd2021/downloads/%E3%80%8C%E5%9A%B4%E9%87%8D%E7%89%B9%E6%AE%8A%E5%82%B3%E6%9F%93%E6%80%A7%E8%82%BA%E7%82%8E%E3%80%8D%E7%96%AB%E6%83%85%E8%AA%B2%E7%A8%8B%E5%BD%88%E6%80%A7%E8%99%95%E7%90%86%E4%BA%8B%E9%A0%85_%E9%81%A0%E8%B7%9D%E6%95%99%E5%AD%B8%E5%85%AC%E5%91%8A_0515D(%E4%B8%AD%E8%8B%B1%E7%89%88%E6%9C%AC).pdf">「嚴重特殊傳染性肺炎」疫情課程彈性處理事項_遠距教學公告_0515D(中英版本).pdf</a></p>
